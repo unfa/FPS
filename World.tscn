@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://characters/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/test01/test01.dae" type="PackedScene" id=2]
@@ -81,20 +81,6 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[sub_resource type="GIProbeData" id=2]
-
-bounds = AABB( -10, -10, -10, 20, 20, 20 )
-cell_size = 0.15625
-to_cell_xform = Transform( 6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 64, 64, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 47, 51, 100, 47, 110, 97, 118, 105, 103, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 4
-energy = 1.0
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.7
-interior = false
-compress = false
-
 [node name="World" type="Spatial" index="0"]
 
 _sections_unfolded = [ "Transform" ]
@@ -103,6 +89,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="Characters" index="0" instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 
 [node name="Map" type="Spatial" parent="." index="1"]
@@ -212,21 +199,6 @@ omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
-
-[node name="GIProbe" type="GIProbe" parent="Map/Lighting" index="4"]
-
-transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0 )
-layers = 1
-subdiv = 1
-extents = Vector3( 10, 10, 10 )
-dynamic_range = 4
-energy = 1.0
-propagation = 0.7
-bias = 1.5
-normal_bias = 0.0
-interior = false
-compress = false
-data = SubResource( 2 )
 
 
 [editable path="Characters/Player"]
