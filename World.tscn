@@ -81,7 +81,7 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[node name="World" type="Spatial" index="0"]
+[node name="World" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -91,6 +91,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="Map" type="Spatial" parent="." index="1"]
 
