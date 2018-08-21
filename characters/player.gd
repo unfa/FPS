@@ -150,11 +150,12 @@ func walk(delta):
 	velocity = Vector3(velocity_xz.x, velocity_y, velocity_xz.y)
 	
 	# perform the motion
-	move_and_slide(velocity, Vector3(0,1,0))
+	var actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 	$Debug.text = "direction " + String(direction) +"\n"
 	$Debug.text += "target " + String(target) +"\n"
 	$Debug.text += "velocity " + String(velocity) +"\n"
+	$Debug.text += "actual_velocity " + String(actual_velocity) +"\n"
 
 func _ready():
 	# capture the mouse

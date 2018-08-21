@@ -131,7 +131,6 @@ omni_range = 18.1446
 omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
-_sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
 [node name="OmniLight3" type="OmniLight" parent="Map/Lighting" index="1"]
 
@@ -273,4 +272,3 @@ _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
 
 [editable path="Characters/Player"]
-[editable path="Map/Geometry"]

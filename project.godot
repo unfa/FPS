@@ -47,6 +47,7 @@ game_exit=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name"
 
 [rendering]
 
+quality/shadows/filter_mode=2
 quality/shadows/filter_mode.mobile=1
 quality/shading/force_vertex_shading.mobile=false
 environment/default_environment="res://default_env.tres"
