@@ -3,7 +3,11 @@
 [ext_resource path="res://characters/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/test01/test01.tscn" type="PackedScene" id=2]
 
+<<<<<<< HEAD
 [node name="World" type="Spatial"]
+=======
+[node name="World" type="Spatial" index="0"]
+>>>>>>> 26a8b97c2d1491de486dbec25767fd73bfa09008
 
 _sections_unfolded = [ "Transform" ]
 
