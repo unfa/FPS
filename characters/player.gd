@@ -3,21 +3,31 @@ extends "res://characters/character.gd"
 var camera_angle = 0
 var mouse_sensitivity = 0.2
 
+
 var direction = Vector3()
 var velocity = Vector3()
+var velocity_xz = Vector2()
+var velocity_y = 0
 var target = Vector3()
+var target_xz = Vector2()
+var target_y = 0
 
-const FLY_SPEED = 150
-const FLY_SPEED_SPRINT = 300
+const FLY_SPEED = 300
+const FLY_SPEED_SPRINT = 850
 
-const WALK_SPEED = 150
-const WALK_SPEED_SPRINT = 300
+const FLY_ACCELERATION = 0.25
+const FLY_DECELERATION = 0.25
 
-const WALK_ACCELERATION = 1
-const WALK_DECELERATION = 10
 
-const FLY_ACCELERATION = 1
-const FLY_DECELERATION = 10
+const WALK_SPEED = 300
+const WALK_SPEED_SPRINT = 700
+
+const WALK_ACCELERATION = 0.75
+const WALK_DECELERATION = 0.4
+
+const WALK_GRAVITY = 9.8 * 3
+const WALK_JUMP = 5 * 2.25
+
 
 func mouselook(event):
 	# apply Y rotation (turn the head)
@@ -32,7 +42,7 @@ func mouselook(event):
 		if camera_angle_new < 90 and camera_angle_new > -90:
 			$Head/Camera.rotate_x(deg2rad(camera_angle_change))
 			camera_angle += camera_angle_change
-			
+
 func fly(delta):
 		# get where is the player looking currently
 	var aim = $Head/Camera.get_camera_transform().basis
@@ -58,16 +68,75 @@ func fly(delta):
 	
 	target = direction
 	
-	# check if we should sprint
+	# check if we should sprint or walk (sprint is default)
 	if Input.is_action_pressed("move_sprint"):
-		target = target * FLY_SPEED_SPRINT
-	else:
 		target = target * FLY_SPEED
-	
-	if velocity.dot(target) > 1:
-		velocity = velocity.linear_interpolate(target, FLY_ACCELERATION * delta)
 	else:
-		velocity = velocity.linear_interpolate(target, FLY_DECELERATION * delta)
+		target = target * FLY_SPEED_SPRINT
+	
+	## determine if we're accelerating or decelerating
+	if velocity.dot(target) > 1:
+		velocity = velocity.linear_interpolate(target, FLY_ACCELERATION)
+	else:
+		velocity = velocity.linear_interpolate(target, FLY_DECELERATION)
+	
+	move_and_slide(velocity * delta)
+	
+	$Debug.text = "direction " + String(direction) +"\n"
+	$Debug.text += "target " + String(target) +"\n"
+	$Debug.text += "velocity " + String(velocity) +"\n"
+
+func walk(delta):
+		# get where is the player looking currently
+	var aim = $Head/Camera.get_camera_transform().basis
+	
+	# reset the target direction so we havea clean slate
+	direction = Vector3()
+		
+	# getting user input and setting the movement direction
+	if Input.is_action_pressed("move_forward"):
+		direction -= aim.z
+	if Input.is_action_pressed("move_backward"):
+		direction += aim.z
+	if Input.is_action_pressed("move_left"):
+		direction -= aim.x
+	if Input.is_action_pressed("move_right"):
+		direction += aim.x
+#	if Input.is_action_pressed("move_crouch"):
+#		direction -= Vector3(0,1,0)
+	
+	# make sure we always walk along the global XZ plane, regardless of how high (or low) the player is looking
+	direction.y = 0
+	
+	direction = direction.normalized()
+	target = direction
+	
+	# check if we should sprint or walk (sprint is default)
+	if Input.is_action_pressed("move_sprint"):
+		target = target * WALK_SPEED
+	else:
+		target = target * WALK_SPEED_SPRINT
+
+		
+	if Input.is_action_just_pressed("move_jump"):
+		velocity_y = WALK_JUMP
+	
+	target_xz = Vector2(target.x, target.z) * delta
+	#target_y = target.y * delta
+	
+	velocity_y -= WALK_GRAVITY * delta
+	
+	
+	## determine if we're accelerating or decelerating
+	if velocity.dot(target) > 1:
+		velocity_xz = velocity_xz.linear_interpolate(target_xz, WALK_ACCELERATION)
+	else:
+		velocity_xz = velocity_xz.linear_interpolate(target_xz, WALK_DECELERATION)
+	
+	velocity = Vector3(velocity_xz.x, velocity_y, velocity_xz.y)
+	
+	# apply gravity
+	#velocity.y -= WALK_GRAVITY
 	
 	move_and_slide(velocity)
 	
@@ -80,14 +149,13 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _input(event):
-	
 	# mouselook
 	if event is InputEventMouseMotion:
 		mouselook(event)
 		
 func _physics_process(delta):
-	
-	fly(delta)	
+	# walk
+	walk(delta)
 
 func _process(delta):
 	# print out sensor information
