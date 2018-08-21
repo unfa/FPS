@@ -123,6 +123,8 @@ func walk(delta):
 	# jumping
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity_y = WALK_JUMP
+	elif is_on_floor():
+		velocity_y = 0
 	
 	target_xz = Vector2(target.x, target.z) * delta
 	#target_y = target.y * delta
@@ -131,7 +133,7 @@ func walk(delta):
 	if not is_on_floor():
 		velocity_y -= WALK_GRAVITY * delta
 	
-	##determine if we're accelerating or decelerating
+	# determine if we're accelerating or decelerating
 	if velocity.dot(target) > 1:
 		interpolation = WALK_ACCELERATION
 	else:
