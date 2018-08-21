@@ -103,6 +103,7 @@ environment = SubResource( 1 )
 
 [node name="Geometry" parent="Map" index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Lighting" type="Spatial" parent="Map" index="2"]
@@ -111,7 +112,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="Map/Lighting" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.0143, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.94267, 0 )
 layers = 1
 light_color = Color( 0.902344, 0.900526, 0.786026, 1 )
 light_energy = 1.0
@@ -126,7 +127,7 @@ shadow_bias = 0.15
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
-omni_range = 25.0
+omni_range = 12.0
 omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
@@ -134,7 +135,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
 [node name="OmniLight3" type="OmniLight" parent="Map/Lighting" index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.04098, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19252, 0 )
 layers = 1
 light_color = Color( 0.902344, 0.900526, 0.786026, 1 )
 light_energy = 0.15
@@ -157,7 +158,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
 [node name="OmniLight2" type="OmniLight" parent="Map/Lighting" index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.4914, -13.3845 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20476, -6.70843 )
 layers = 1
 light_color = Color( 0.786026, 0.861451, 0.902344, 1 )
 light_energy = 1.0
@@ -172,7 +173,7 @@ shadow_bias = 0.15
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
-omni_range = 25.0
+omni_range = 12.0
 omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
@@ -180,7 +181,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
 [node name="OmniLight4" type="OmniLight" parent="Map/Lighting" index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1949, -25.5604 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.641, -12.6013 )
 layers = 1
 light_color = Color( 0.699829, 0.914062, 0.743345, 1 )
 light_energy = 1.0
@@ -195,7 +196,7 @@ shadow_bias = 0.15
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
-omni_range = 25.0
+omni_range = 12.0
 omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
