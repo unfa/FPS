@@ -5,8 +5,8 @@
 		<author>unfa</author>
 		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
 	</contributor>
-	<created>2018-08-18T14:55:02Z</created>
-	<modified>2018-08-18T14:55:02Z</modified>
+	<created>2018-08-21T19:17:06Z</created>
+	<modified>2018-08-21T19:17:06Z</modified>
 	<unit meter="1.0" name="meter"/>
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -173,8 +173,8 @@
 </library_geometries>
 <library_visual_scenes>
 	<visual_scene id="id-scene-1" name="scene">
-		<node id="Plane" name="Plane" type="NODE">
-			<matrix sid="transform"> 8.0 0.0 0.0 0.0 0.0 8.0 0.0 0.0 0.0 0.0 8.0 0.0 0.0 0.0 0.0 1.0  </matrix>
+		<node id="level -col" name="level -col" type="NODE">
+			<matrix sid="transform"> 4.0 0.0 0.0 0.0 0.0 4.0 0.0 0.0 0.0 0.0 4.0 0.0 0.0 0.0 0.0 1.0  </matrix>
 			<instance_geometry url="#id-mesh-2">
 			</instance_geometry>
 		</node>
