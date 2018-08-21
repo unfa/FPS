@@ -5,6 +5,7 @@ var mouse_sensitivity = 0.2
 
 
 var direction = Vector3()
+var interpolation = 1
 var velocity = Vector3()
 var velocity_xz = Vector2()
 var velocity_y = 0
@@ -22,11 +23,13 @@ const FLY_DECELERATION = 0.25
 const WALK_SPEED = 300
 const WALK_SPEED_SPRINT = 700
 
+const WALK_AIR_CONTROL = 0.1
+
 const WALK_ACCELERATION = 0.75
 const WALK_DECELERATION = 0.4
 
-const WALK_GRAVITY = 9.8 * 3
-const WALK_JUMP = 5 * 2.25
+const WALK_GRAVITY = 9.8 * 4
+const WALK_JUMP = 5 * 2.5
 
 
 func mouselook(event):
@@ -117,28 +120,35 @@ func walk(delta):
 	else:
 		target = target * WALK_SPEED_SPRINT
 
-		
-	if Input.is_action_just_pressed("move_jump"):
+	# jumping
+	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity_y = WALK_JUMP
 	
 	target_xz = Vector2(target.x, target.z) * delta
 	#target_y = target.y * delta
 	
-	velocity_y -= WALK_GRAVITY * delta
+	# apply gravity - only if we're in mid-air
+	if not is_on_floor():
+		velocity_y -= WALK_GRAVITY * delta
 	
-	
-	## determine if we're accelerating or decelerating
+	##determine if we're accelerating or decelerating
 	if velocity.dot(target) > 1:
-		velocity_xz = velocity_xz.linear_interpolate(target_xz, WALK_ACCELERATION)
+		interpolation = WALK_ACCELERATION
 	else:
-		velocity_xz = velocity_xz.linear_interpolate(target_xz, WALK_DECELERATION)
+		interpolation = WALK_DECELERATION
 	
+	# apply air_control if in mid-air
+	if not is_on_floor():
+		interpolation *= WALK_AIR_CONTROL
+	
+	# interpolate the velocity	
+	velocity_xz = velocity_xz.linear_interpolate(target_xz, interpolation)
+	
+	# asseble the final velocity vector
 	velocity = Vector3(velocity_xz.x, velocity_y, velocity_xz.y)
 	
-	# apply gravity
-	#velocity.y -= WALK_GRAVITY
-	
-	move_and_slide(velocity)
+	# perform the motion
+	move_and_slide(velocity, Vector3(0,1,0))
 	
 	$Debug.text = "direction " + String(direction) +"\n"
 	$Debug.text += "target " + String(target) +"\n"
@@ -147,6 +157,8 @@ func walk(delta):
 func _ready():
 	# capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	self
 	
 func _input(event):
 	# mouselook
