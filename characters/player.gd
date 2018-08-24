@@ -152,16 +152,16 @@ func walk(delta):
 	# perform the motion
 	var actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
-	$Debug.text = "direction " + String(direction) +"\n"
-	$Debug.text += "target " + String(target) +"\n"
-	$Debug.text += "velocity " + String(velocity) +"\n"
-	$Debug.text += "actual_velocity " + String(actual_velocity) +"\n"
-
+	$DebugL.text = "direction " + String(direction) +"\n"
+	$DebugL.text += "target " + String(target) +"\n"
+	$DebugL.text += "velocity " + String(velocity) +"\n"
+	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
+	
+	$DebugR.text = "FPS: " + String(Engine.get_frames_per_second())
 func _ready():
 	# capture the mouse
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	self
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 	
 func _input(event):
 	# mouselook
