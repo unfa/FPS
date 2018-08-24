@@ -97,6 +97,7 @@ reverb_bus_uniformity = 0.0
 script = ExtResource( 1 )
 contents = {
 "ammo_blaster": 25,
+"health": 10,
 "weapon_blaster": 1
 }
 

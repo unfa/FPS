@@ -2,7 +2,8 @@ extends Area
 
 export var contents = {
 	"weapon_blaster": 1,
-	"ammo_blaster": 25
+	"ammo_blaster": 25,
+	"health": 10
 	}
 
 # state machine

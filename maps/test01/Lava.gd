@@ -23,4 +23,4 @@ func _on_Lava_body_entered(body):
 		
 	# hurt everything that can take damage
 	if body.has_method("kill"):
-		body.kill()
+		body.hurt(15)

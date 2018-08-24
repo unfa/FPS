@@ -53,13 +53,20 @@ func debug():
 #	$Debug.text += "\nMagnetometer: " + String(Input.get_magnetometer())
 
 func pickup(contents):
-	for item in contents:
-		if inventory.has(item):
-			inventory[item] += contents[item]
+	var used = false # track if we actually use anything
+	for item in contents: # for ecvery item in the pickup do
+		if item == "health": # if we're picking up health packs
+			if heal(contents[item]): # let's use the immediately
+				used = true
 		else:
-			inventory[item] = contents[item]
+			if inventory.has(item): # check if we already have this type of item
+				inventory[item] += contents[item] # increase the stock amount
+				used = true
+			else: # if we don't have any yet
+				inventory[item] = contents[item] # create a new entry in the inventory 
+				used = true
 	
-	return true
+	return used # tell the pickup object that we got it, so it can deactivate
 
 func mouselook(event):
 	# apply Y rotation (turn the head)
