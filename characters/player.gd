@@ -156,6 +156,7 @@ func walk(delta):
 	$DebugL.text += "target " + String(target) +"\n"
 	$DebugL.text += "velocity " + String(velocity) +"\n"
 	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
+	$DebugL.text += "health " + String(health) +"\n"
 	
 	$DebugR.text = "FPS: " + String(Engine.get_frames_per_second())
 func _ready():
@@ -164,12 +165,14 @@ func _ready():
 	
 func _input(event):
 	# mouselook
-	if event is InputEventMouseMotion:
-		mouselook(event)
+	if state_alive:
+		if event is InputEventMouseMotion:
+			mouselook(event)
 		
 func _physics_process(delta):
 	# walk
-	walk(delta)
+	if state_alive:
+		walk(delta)
 
 func _process(delta):
 	# print out sensor information
