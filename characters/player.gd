@@ -160,8 +160,7 @@ func walk(delta):
 	$DebugR.text = "FPS: " + String(Engine.get_frames_per_second())
 func _ready():
 	# capture the mouse
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _input(event):
 	# mouselook
