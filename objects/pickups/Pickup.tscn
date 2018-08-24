@@ -9,7 +9,7 @@ radius = 0.1
 [sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
-flags_transparent = false
+flags_transparent = true
 flags_unshaded = false
 flags_vertex_lighting = false
 flags_no_depth_test = false
@@ -29,7 +29,7 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 1 )
+albedo_color = Color( 0.25, 0.25, 0.25, 1 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -60,6 +60,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
+_sections_unfolded = [ "Parameters" ]
 
 [sub_resource type="SphereMesh" id=3]
 
@@ -71,7 +72,7 @@ radial_segments = 16
 rings = 8
 is_hemisphere = false
 
-[node name="Pickup" type="Area" index="0"]
+[node name="Pickup" type="Area"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -94,6 +95,10 @@ reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 script = ExtResource( 1 )
+contents = {
+"ammo_blaster": 25,
+"weapon_blaster": 1
+}
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
@@ -114,5 +119,7 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
+
+[connection signal="body_entered" from="." to="." method="_on_Pickup_body_entered"]
 
 

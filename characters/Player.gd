@@ -1,8 +1,9 @@
-extends "res://characters/character.gd"
+extends "res://characters/Character.gd"
 
 var camera_angle = 0
 var mouse_sensitivity = 0.2
 
+var inventory = {} # storting all the stuff players can pick up
 
 var direction = Vector3()
 var interpolation = 1
@@ -32,6 +33,35 @@ const WALK_DECELERATION = 0.4
 const WALK_GRAVITY = 9.8 * 4
 const WALK_JUMP = 5 * 2.5
 
+func debug():
+	$DebugL.text = ""
+	
+#	$Debug.text += "direction " + String(direction) +"\n"
+#	$Debug.text += "target " + String(target) +"\n"
+#	$Debug.text += "velocity " + String(velocity) +"\n"
+
+#	$DebugL.text = "direction " + String(direction) +"\n"
+#	$DebugL.text += "target " + String(target) +"\n"
+#	$DebugL.text += "velocity " + String(velocity) +"\n"
+#	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
+	
+	$DebugL.text += "health " + String(health) +"\n"
+	$DebugL.text += "inventory " + String(inventory) +"\n"
+	
+	$DebugR.text = "FPS: " + String(Engine.get_frames_per_second())
+	
+	# print out sensor information
+#	$Debug.text = "Gravity: " + String(Input.get_gravity())
+#	$Debug.text += "\nGyroscope: " + String(Input.get_gyroscope())
+#	$Debug.text += "\nAccelerometer: " + String(Input.get_accelerometer())
+#	$Debug.text += "\nMagnetometer: " + String(Input.get_magnetometer())
+
+func pickup(contents):
+	for item in contents:
+		if inventory.has(item):
+			inventory[item] += contents[item]
+		else:
+			inventory[item] = contents[item]
 
 func mouselook(event):
 	# apply Y rotation (turn the head)
@@ -86,26 +116,6 @@ func fly(delta):
 	
 	move_and_slide(velocity * delta)
 	
-	$Debug.text = "direction " + String(direction) +"\n"
-	$Debug.text += "target " + String(target) +"\n"
-	$Debug.text += "velocity " + String(velocity) +"\n"
-
-func debug():
-	$DebugL.text = "direction " + String(direction) +"\n"
-	$DebugL.text += "target " + String(target) +"\n"
-	$DebugL.text += "velocity " + String(velocity) +"\n"
-	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
-	$DebugL.text += "health " + String(health) +"\n"
-	
-	$DebugR.text = "FPS: " + String(Engine.get_frames_per_second())
-	
-	# print out sensor information
-#	$Debug.text = "Gravity: " + String(Input.get_gravity())
-#	$Debug.text += "\nGyroscope: " + String(Input.get_gyroscope())
-#	$Debug.text += "\nAccelerometer: " + String(Input.get_accelerometer())
-#	$Debug.text += "\nMagnetometer: " + String(Input.get_magnetometer())
-
-
 func walk(delta):
 		# get where is the player looking currently
 	var aim = $Head/Camera.get_camera_transform().basis
