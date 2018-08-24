@@ -35,15 +35,11 @@ const WALK_JUMP = 5 * 2.5
 
 func debug():
 	$DebugL.text = ""
-	
-#	$Debug.text += "direction " + String(direction) +"\n"
-#	$Debug.text += "target " + String(target) +"\n"
-#	$Debug.text += "velocity " + String(velocity) +"\n"
 
-#	$DebugL.text = "direction " + String(direction) +"\n"
-#	$DebugL.text += "target " + String(target) +"\n"
-#	$DebugL.text += "velocity " + String(velocity) +"\n"
-#	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
+	$DebugL.text += "direction " + String(direction) +"\n"
+	$DebugL.text += "target " + String(target) +"\n"
+	$DebugL.text += "velocity " + String(velocity) +"\n"
+	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
 	
 	$DebugL.text += "health " + String(health) +"\n"
 	$DebugL.text += "inventory " + String(inventory) +"\n"
@@ -122,10 +118,10 @@ func walk(delta):
 		# get where is the player looking currently
 	var aim = $Head/Camera.get_camera_transform().basis
 	
+	# reset the target direction so we havea clean slate
+	direction = Vector3()
+	
 	if state_alive:
-		# reset the target direction so we havea clean slate
-		direction = Vector3()
-			
 		# getting user input and setting the movement direction
 		if Input.is_action_pressed("move_forward"):
 			direction -= aim.z
@@ -139,11 +135,12 @@ func walk(delta):
 	#		direction -= Vector3(0,1,0)
 		
 		# make sure we always walk along the global XZ plane, regardless of how high (or low) the player is looking
-		direction.y = 0
+	direction.y = 0
+	
+	direction = direction.normalized()
+	target = direction
 		
-		direction = direction.normalized()
-		target = direction
-		
+	if state_alive:
 		# check if we should sprint or walk (sprint is default)
 		if Input.is_action_pressed("move_sprint"):
 			target = target * WALK_SPEED
@@ -158,7 +155,10 @@ func walk(delta):
 		
 		target_xz = Vector2(target.x, target.z) * delta
 		#target_y = target.y * delta
-	
+	else:
+		target = Vector3()
+		target_xz = Vector2()
+		
 	# apply gravity - only if we're in mid-air
 	if not is_on_floor():
 		velocity_y -= WALK_GRAVITY * delta
