@@ -62,6 +62,8 @@ func pickup(contents):
 			inventory[item] += contents[item]
 		else:
 			inventory[item] = contents[item]
+	
+	return true
 
 func mouselook(event):
 	# apply Y rotation (turn the head)

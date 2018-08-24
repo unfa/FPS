@@ -11,7 +11,7 @@ var state_active = true
 
 func activate():
 	state_active = true
-	show()
+	$MeshInstance.show()
 
 func deactivate():
 	state_active = false
