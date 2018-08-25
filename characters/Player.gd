@@ -15,12 +15,18 @@ var target = Vector3()
 var target_xz = Vector2()
 var target_y = 0
 
+### the follwing is to implement fall damage
+var velocity_previous = Vector3()
+var on_floor_previous = true
+const UNSAFE_VELOCITY = 1000 # how fast we need to hit something to get damage
+const UNSAFE_VELOCITY_FACTOR = 0.1 # how much damage for every length unit of the velocit vector on hit
+
+
 const FLY_SPEED = 300
 const FLY_SPEED_SPRINT = 850
 
 const FLY_ACCELERATION = 0.25
 const FLY_DECELERATION = 0.25
-
 
 const WALK_SPEED = 300
 const WALK_SPEED_SPRINT = 700
@@ -66,7 +72,7 @@ func pickup(contents):
 				inventory[item] = contents[item] # create a new entry in the inventory 
 				used = true
 	
-	return used # tell the pickup object that we got it, so it can deactivate
+	return used # tell the pickup object if we got it, so it can deactivate
 
 func mouselook(event):
 	# apply Y rotation (turn the head)
@@ -121,10 +127,12 @@ func fly(delta):
 	
 	move_and_slide(velocity * delta)
 	
+	if is_on_floor() and not on_floor_previous: # if we've just hit the ground
+		pass
+	
 func walk(delta):
 		# get where is the player looking currently
 	var aim = $Head/Camera.get_camera_transform().basis
-	
 	# reset the target direction so we havea clean slate
 	direction = Vector3()
 	
@@ -185,6 +193,10 @@ func walk(delta):
 	
 	# asseble the final velocity vector
 	velocity = Vector3(velocity_xz.x, velocity_y, velocity_xz.y)
+	
+	# store data for future reference
+	velocity_previous = velocity
+	on_floor_previous = is_on_floor()
 	
 	# perform the motion
 	actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
