@@ -26,7 +26,7 @@ func heal(hp): #  increase health
 func hurt(hp): # do damage
 	health -= hp
 	if health <= 0: # if we're dead now
-		die() # initiate death sequence
+		kill() # initiate death sequence
 
 func kill():
 	if state_alive:
