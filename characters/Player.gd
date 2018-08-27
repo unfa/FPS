@@ -52,7 +52,10 @@ func debug():
 	
 	$DebugR.text = String(Engine.get_frames_per_second()) + " FPS"
 	
-	$DebugL.text += "on_floor_previous " + String(on_floor_previous)
+	$DebugL.text += "on_floor_previous " + String(on_floor_previous) + "\n"
+	
+	$DebugL.text += "feet_collision_count " + String(feet_collision_count) + "\n"
+	$DebugL.text += "feet_collision " + String(check_feet_collision()) + "\n"
 	
 	# print out sensor information
 #	$Debug.text = "Gravity: " + String(Input.get_gravity())

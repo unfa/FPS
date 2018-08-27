@@ -11,11 +11,11 @@ height = 0.9
 
 extents = Vector3( 0.2, 0.2, 0.2 )
 
-[node name="Character" type="KinematicBody" index="0"]
+[node name="Character" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 7
+collision_layer = 4
 collision_mask = 1
 axis_lock_linear_x = false
 axis_lock_linear_y = false
@@ -29,7 +29,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 health = 100
 health_max = 100
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="0"]
+[node name="Body" type="CollisionShape" parent="." index="0"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
 shape = SubResource( 1 )
@@ -38,8 +38,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Feet" type="Area" parent="." index="1"]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192853, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -52,7 +51,7 @@ angular_damp = 1.0
 priority = 0.0
 monitoring = true
 monitorable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 audio_bus_override = false
 audio_bus_name = "Master"
@@ -60,11 +59,15 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Feet" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10549e-07, 0.678543 )
 shape = SubResource( 2 )
 disabled = false
+
+[connection signal="body_entered" from="Feet" to="." method="_on_Feet_body_entered"]
+
+[connection signal="body_exited" from="Feet" to="." method="_on_Feet_body_exited"]
 
 

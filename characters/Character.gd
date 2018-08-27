@@ -4,8 +4,17 @@ extends KinematicBody
 export var health = 100
 export var health_max = 100
 
+var feet_collision_count = 0
+var feet_collision = false
+
 # state machine
 var state_alive = true
+
+func check_feet_collision():
+	if feet_collision_count > 0:
+		return true
+	else:
+		return false
 
 func heal(hp): #  increase health
 	# store the current health
@@ -48,3 +57,13 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+
+func _on_Feet_body_entered(body):
+	feet_collision_count += 1
+	print("feet collision: " + String(feet_collision_count))
+
+
+func _on_Feet_body_exited(body):
+	feet_collision_count -= 1
+	print("feet collision: " + String(feet_collision_count))
