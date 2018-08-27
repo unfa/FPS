@@ -50,7 +50,9 @@ func debug():
 	$DebugL.text += "health " + String(health) +"\n"
 	$DebugL.text += "inventory " + String(inventory) +"\n"
 	
-	$DebugR.text = "FPS: " + String(Engine.get_frames_per_second())
+	$DebugR.text = String(Engine.get_frames_per_second()) + " FPS"
+	
+	$DebugL.text += "on_floor_previous " + String(on_floor_previous)
 	
 	# print out sensor information
 #	$Debug.text = "Gravity: " + String(Input.get_gravity())
@@ -166,7 +168,7 @@ func walk(delta):
 		if Input.is_action_just_pressed("move_jump") and is_on_floor(): # if we are on the floor and want to jump
 			velocity_y = WALK_JUMP # then jump
 		elif is_on_floor(): # if we are on the floor, but not want to jump
-			velocity_y = 0  # make sure the Y velocity is 0 so we can fall off an edge properly
+			velocity_y = -0.15  # make sure the Y velocity is low, so we can fall off an edge properly
 		
 		target_xz = Vector2(target.x, target.z) * delta
 		#target_y = target.y * delta
