@@ -6,8 +6,10 @@ var platform = 0
 
 var camera_angle = 0
 var mouse_sensitivity = 0.2
-var gyro_sensitivity = 0.1
+var gyro_sensitivity = 0.2
+var gyro_lerp = 0.5
 var gyro = Vector3()
+var gyro_previous = Vector3()
 
 var inventory = {} # storting all the stuff players can pick up
 
@@ -103,7 +105,8 @@ func mouselook(event):
 			camera_angle += camera_angle_change
 
 func gyrolook():
-	gyro = Input.get_gyroscope()
+	gyro_previous = gyro
+	gyro = Input.get_gyroscope().linear_interpolate(gyro_previous, gyro_lerp)
 
 	# apply Y rotation (turn the head)
 	$Head.rotate_y(gyro.y * gyro_sensitivity)
