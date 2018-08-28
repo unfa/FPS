@@ -60,10 +60,12 @@ func _ready():
 
 
 func _on_Feet_body_entered(body):
+	print(body)
 	feet_collision_count += 1
 	print("feet collision: " + String(feet_collision_count))
 
 
 func _on_Feet_body_exited(body):
+	print(body)
 	feet_collision_count -= 1
 	print("feet collision: " + String(feet_collision_count))

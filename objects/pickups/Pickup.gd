@@ -21,7 +21,8 @@ func deactivate():
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	print(name + ": " + String(contents))
+	#print(name + ": " + String(contents))
+	pass
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

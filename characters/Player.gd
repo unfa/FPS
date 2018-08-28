@@ -1,5 +1,9 @@
 extends "res://characters/Character.gd"
 
+enum PLATFORM{desktop, mobile}
+
+var platform = 0
+
 var camera_angle = 0
 var mouse_sensitivity = 0.2
 
@@ -56,6 +60,8 @@ func debug():
 	
 	$DebugL.text += "feet_collision_count " + String(feet_collision_count) + "\n"
 	$DebugL.text += "feet_collision " + String(check_feet_collision()) + "\n"
+	
+	$DebugL.text += "platform " + String(PLATFORM.keys()[platform]) + "\n"
 	
 	# print out sensor information
 #	$Debug.text = "Gravity: " + String(Input.get_gravity())
@@ -207,8 +213,15 @@ func walk(delta):
 	actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 func _ready():
+	# determine of we're running on desktop or mobile platforms:
+	if OS.get_name() in ["Android", "iOS"]:
+		platform = PLATFORM.mobile
+	else:
+		platform = PLATFORM.desktop
+	
 	# capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	
 func _input(event):
 	# mouselook

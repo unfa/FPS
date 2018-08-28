@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 123, 124 )
 
-[node name="World" type="Spatial" index="0"]
+[node name="World" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -29,7 +29,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
 monitorable = true
 collision_layer = 0
-_sections_unfolded = [ "Collision" ]
 
 [node name="Map" parent="." index="1" instance=ExtResource( 2 )]
 
