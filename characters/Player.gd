@@ -6,6 +6,8 @@ var platform = 0
 
 var camera_angle = 0
 var mouse_sensitivity = 0.2
+var gyro_sensitivity = 0.1
+var gyro = Vector3()
 
 var inventory = {} # storting all the stuff players can pick up
 
@@ -62,6 +64,7 @@ func debug():
 	$DebugL.text += "feet_collision " + String(check_feet_collision()) + "\n"
 	
 	$DebugL.text += "platform " + String(PLATFORM.keys()[platform]) + "\n"
+	$DebugL.text += "gyro " + String(gyro) + "\n"
 	
 	# print out sensor information
 #	$Debug.text = "Gravity: " + String(Input.get_gravity())
@@ -98,6 +101,23 @@ func mouselook(event):
 		if camera_angle_new < 90 and camera_angle_new > -90:
 			$Head/Camera.rotate_x(deg2rad(camera_angle_change))
 			camera_angle += camera_angle_change
+
+func gyrolook():
+	gyro = Input.get_gyroscope()
+
+	# apply Y rotation (turn the head)
+	$Head.rotate_y(gyro.y * gyro_sensitivity)
+	
+	# calculate the X rotation (angle the camera)
+	var camera_angle_change = rad2deg(gyro.x) * mouse_sensitivity
+	var camera_angle_new = camera_angle + camera_angle_change
+	
+	# clip the camera angle
+	#TODO - this gives some room for error, so it could be improved later, but it's quite good for now
+	if camera_angle_new < 90 and camera_angle_new > -90:
+		$Head/Camera.rotate_x(deg2rad(camera_angle_change))
+		camera_angle += camera_angle_change
+	
 
 func fly(delta):
 		# get where is the player looking currently
@@ -230,6 +250,10 @@ func _input(event):
 			mouselook(event)
 		
 func _physics_process(delta):
+	
+	if platform == PLATFORM.mobile:
+		gyrolook()
+	
 	# walk
 	walk(delta)
 
