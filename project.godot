@@ -8,6 +8,9 @@
 
 config_version=3
 
+_global_script_classes=null
+_global_script_class_icons=null
+
 [application]
 
 config/name="unfa FPS"
