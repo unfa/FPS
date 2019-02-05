@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.3
+radial_segments = 12
+rings = 1
+
+[node name="Blaster" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
+
+transform = Transform( 4.59648e-14, 1.62921e-07, 1, 1, -2.8213e-07, 0, 2.8213e-07, 1, -1.62921e-07, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+

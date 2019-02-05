@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 123, 124 )
 
-[node name="World" type="Spatial" index="0"]
+[node name="World" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
