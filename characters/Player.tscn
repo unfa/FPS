@@ -101,19 +101,21 @@ _sections_unfolded = [ "Transform" ]
 [node name="WeaponHandle" type="Spatial" parent="Head/Camera" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362205, -0.334243, -0.458613 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Blaster" parent="Head/Camera/WeaponHandle" index="0" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 0.99972, -0.0236731, 0, 0.0236731, 0.99972, 0, 0, 0.0542599 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="Head/Camera/WeaponHandle/Blaster" index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.294273 )
+visible = false
 layers = 1
 light_color = Color( 0.992188, 0.405377, 0.201538, 1 )
-light_energy = 1.7287
+light_energy = 0.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5

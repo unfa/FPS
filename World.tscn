@@ -18,6 +18,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="Characters" index="0" instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.20387, 6.29607 )
 collision_mask = 7
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
