@@ -15,6 +15,15 @@ func _input(event):
 			if $"../../../..".inventory["ammo_blaster"] > 0: #check if the amount is higher than zero
 				$AnimationPlayer.play("FirePrimary") # run the animation
 				$"../../../..".inventory["ammo_blaster"] -= 1 # consume ammo
+				
+				#instntiate the projectile
+				var projectile = preload("res://objects/weapons/blaster/BlasterProjectile.tscn")
+				var projectile_instance = projectile.instance()
+				projectile_instance.global_transform = $ProjectileSpawner.global_transform
+				get_tree().root.add_child(projectile_instance)
+				
+				
+				
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

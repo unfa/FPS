@@ -86,7 +86,7 @@ angular_damp = 1.0
 priority = 0.0
 monitoring = true
 monitorable = true
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 audio_bus_override = false
 audio_bus_name = "Master"
@@ -95,6 +95,7 @@ reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 contents = {
 "ammo_blaster": 25,
 "health": 10,
