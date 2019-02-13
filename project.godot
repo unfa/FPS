@@ -51,4 +51,5 @@ weapon_fire_primary=[ Object(InputEventMouseButton,"resource_local_to_scene":fal
 quality/shadows/filter_mode=2
 quality/shadows/filter_mode.mobile=1
 quality/shading/force_vertex_shading.mobile=false
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

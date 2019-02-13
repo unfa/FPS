@@ -16,8 +16,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Characters" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Player" parent="Characters" index="0" instance=ExtResource( 1 )]
 
 editor/display_folded = true
@@ -166,7 +164,7 @@ shape = SubResource( 1 )
 shape_centered = true
 shape_visible = true
 passby_press = false
-action = "move_backward"
+action = "weapon_fire_primary"
 visibility_mode = 1
 _sections_unfolded = [ "Transform" ]
 
