@@ -6,4 +6,4 @@ https://youtu.be/6VKH6RbS1yA
  
  ![alt text][screenshot]
 
-[screenshot1]: FPS2/mpv-shot0001.jpg "Screenshot"
+[screenshot1]: https://github.com/unfa/FPS2/raw/master/mpv-shot0001.jpg "Screenshot"
