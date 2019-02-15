@@ -1,5 +1,12 @@
 extends KinematicBody
 
+signal recieved_damage
+signal recieved_health
+signal recieved_item
+signal died
+signal weapon_trigger
+signal weapon_change
+
 # all characters have health
 export var health = 100
 export var health_max = 100
@@ -17,6 +24,8 @@ func check_feet_collision():
 		return false
 
 func heal(hp): #  increase health
+
+	emit_signal("recieved_health", hp)
 	# store the current health
 	var health_old = health
 
@@ -33,12 +42,16 @@ func heal(hp): #  increase health
 	return health_old - health # return the actual amount healed
 
 func hurt(hp): # do damage
+	emit_signal("recieved_damage", hp)
+
 	health -= hp
 	if health <= 0: # if we're dead now
 		kill() # initiate death sequence
 
 func kill():
+	
 	if state_alive:
+		emit_signal("died")
 		
 		if health > 0:
 			health = 0

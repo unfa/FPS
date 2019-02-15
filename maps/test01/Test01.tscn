@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://maps/test01/Test01.gd" type="Script" id=1]
 [ext_resource path="res://maps/test01/test01.dae" type="PackedScene" id=2]
-[ext_resource path="res://maps/test01/Lava.gd" type="Script" id=3]
-[ext_resource path="res://objects/pickups/Pickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/lights/FlickerOmni.tscn" type="PackedScene" id=3]
+[ext_resource path="res://maps/test01/Lava.gd" type="Script" id=4]
+[ext_resource path="res://objects/pickups/Pickup.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Environment" id=1]
 
@@ -169,13 +170,12 @@ environment = SubResource( 1 )
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" parent="Geometry" index="1"]
+[node name="AnimationPlayer" parent="Geometry" index="2"]
 
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Lighting" type="Spatial" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="Lighting" index="0"]
@@ -199,9 +199,55 @@ omni_range = 18.1446
 omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
-_sections_unfolded = [ "Shadow" ]
+_sections_unfolded = [ "Editor", "Shadow" ]
 
-[node name="OmniLight3" type="OmniLight" parent="Lighting" index="1"]
+[node name="FlickerOmni" parent="Lighting" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -44.5962 )
+light_color = Color( 0.443606, 0.249084, 0.828125, 1 )
+light_energy = 0.3
+flicker = false
+flare = true
+threshold_on = 0.4
+threshold_off = 0.1
+delay_base = 2
+delay_random = 3
+
+[node name="FlickerOmni4" parent="Lighting" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -21.3388 )
+light_color = Color( 0.640015, 0.875, 0.328125, 1 )
+light_energy = 0.3
+flicker = false
+flare = true
+
+[node name="FlickerOmni2" parent="Lighting" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9577, 12.0452, -33.1111 )
+light_energy = 0.2
+flicker = false
+flare = true
+threshold_on = 0.7
+threshold_off = 0.6
+delay_base = 25
+delay_random = 50
+
+[node name="FlickerOmni3" parent="Lighting" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5272, 12.0452, -33.1111 )
+light_energy = 0.2
+flicker = false
+flare = true
+threshold_on = 0.0
+threshold_off = 0.0
+delay_base = 3
+delay_random = 8
+
+[node name="Flare" parent="Lighting/FlickerOmni3" index="0"]
+
+color = Color( 1, 1, 1, 1 )
+
+[node name="OmniLight3" type="OmniLight" parent="Lighting" index="5"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19252, 0 )
 layers = 1
@@ -224,7 +270,7 @@ omni_shadow_mode = 0
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
-[node name="OmniLight2" type="OmniLight" parent="Lighting" index="2"]
+[node name="OmniLight2" type="OmniLight" parent="Lighting" index="6"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20476, -6.70843 )
 layers = 1
@@ -247,7 +293,7 @@ omni_shadow_mode = 0
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
-[node name="OmniLight5" type="OmniLight" parent="Lighting" index="3"]
+[node name="OmniLight5" type="OmniLight" parent="Lighting" index="7"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.06682, 10.1547 )
 layers = 1
@@ -270,7 +316,7 @@ omni_shadow_mode = 0
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
-[node name="OmniLight6" type="OmniLight" parent="Lighting" index="4"]
+[node name="OmniLight6" type="OmniLight" parent="Lighting" index="8"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39903, 3.94431, -0.0520515 )
 layers = 1
@@ -293,7 +339,7 @@ omni_shadow_mode = 0
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
-[node name="OmniLight7" type="OmniLight" parent="Lighting" index="5"]
+[node name="OmniLight7" type="OmniLight" parent="Lighting" index="9"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39903, 6.27138, 10.4972 )
 layers = 1
@@ -316,7 +362,7 @@ omni_shadow_mode = 0
 omni_shadow_detail = 1
 _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
-[node name="OmniLight4" type="OmniLight" parent="Lighting" index="6"]
+[node name="OmniLight4" type="OmniLight" parent="Lighting" index="10"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.641, -12.6013 )
 layers = 1
@@ -391,7 +437,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Actors/Lava" index="0"]
 
@@ -439,7 +485,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Actors/Lava2" index="0"]
 
@@ -463,11 +509,11 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 shape = SubResource( 5 )
 disabled = false
 
-[node name="Pickup" parent="Actors" index="2" instance=ExtResource( 4 )]
+[node name="Pickup" parent="Actors" index="2" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96993, 1.14178 )
 
-[node name="Pickup2" parent="Actors" index="3" instance=ExtResource( 4 )]
+[node name="Pickup2" parent="Actors" index="3" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357273, -3.1864 )
 contents = {
@@ -481,3 +527,4 @@ contents = {
 
 
 [editable path="Geometry"]
+[editable path="Lighting/FlickerOmni3"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/Player.gd" type="Script" id=2]
 [ext_resource path="res://objects/weapons/blaster/Blaster.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/Sound Effects/export/Weapon Empty.wav" type="AudioStream" id=4]
 
 [sub_resource type="Environment" id=1]
 
@@ -114,6 +115,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362205, -0.334243, -0.458613
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Blaster" parent="Head/Camera/WeaponHandle" index="0" instance=ExtResource( 3 )]
+
+[node name="Empty" type="AudioStreamPlayer3D" parent="Head" index="1"]
+
+stream = ExtResource( 4 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 10000.0
+attenuation_filter_db = -12.0
+doppler_tracking = 0
+_sections_unfolded = [ "Doppler" ]
 
 [node name="DebugL" type="Label" parent="." index="2"]
 

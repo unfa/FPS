@@ -47,6 +47,9 @@ const WALK_DECELERATION = 0.4
 const WALK_GRAVITY = 9.8 * 4
 const WALK_JUMP = 5 * 2.5
 
+func weapon_empty():
+	$Head/Empty.play()
+
 func debug():
 	$DebugL.text = ""
 
@@ -244,6 +247,8 @@ func _ready():
 	
 	# capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	self.connect("weapon_trigger", $Head/Camera/WeaponHandle/Blaster, "trigger")
 
 	
 func _input(event):
@@ -251,6 +256,10 @@ func _input(event):
 	if state_alive:
 		if event is InputEventMouseMotion:
 			mouselook(event)
+		
+		if event is InputEventMouseButton:
+			if Input.is_action_pressed("weapon_fire_primary"):
+				emit_signal("weapon_trigger")
 		
 func _physics_process(delta):
 	
@@ -261,11 +270,10 @@ func _physics_process(delta):
 	walk(delta)
 
 func _process(delta):
-	debug()
+	#debug()
 		
 	# exit game
 	if Input.is_action_just_pressed("game_exit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().quit()
-		
 	
