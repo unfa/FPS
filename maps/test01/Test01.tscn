@@ -157,7 +157,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 0.4, 0.4, 0.4 )
 
-[node name="Map" type="Spatial"]
+[node name="Map" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -206,6 +206,8 @@ _sections_unfolded = [ "Editor", "Shadow" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -44.5962 )
 light_color = Color( 0.443606, 0.249084, 0.828125, 1 )
 light_energy = 0.3
+shadow_enabled = false
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 flicker = false
 flare = true
 threshold_on = 0.4
@@ -218,6 +220,8 @@ delay_random = 3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -21.3388 )
 light_color = Color( 0.640015, 0.875, 0.328125, 1 )
 light_energy = 0.3
+shadow_enabled = false
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 flicker = false
 flare = true
 
@@ -225,6 +229,8 @@ flare = true
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9577, 12.0452, -33.1111 )
 light_energy = 0.2
+shadow_enabled = false
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 flicker = false
 flare = true
 threshold_on = 0.7
@@ -236,6 +242,8 @@ delay_random = 50
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5272, 12.0452, -33.1111 )
 light_energy = 0.2
+shadow_enabled = false
+_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 flicker = false
 flare = true
 threshold_on = 0.0

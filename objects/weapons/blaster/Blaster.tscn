@@ -137,7 +137,7 @@ tracks/4/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[node name="Blaster" type="Spatial"]
+[node name="Blaster" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -167,6 +167,8 @@ _sections_unfolded = [ "Transform", "material" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241201 )
 light_color = Color( 0.992157, 0.403922, 0.2, 1 )
+light_energy = 0.0
+light_cull_mask = -1
 flare = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]

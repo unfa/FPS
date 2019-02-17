@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instant>
-  <LastUsedSnapshot name="Sound Effects"/>
   <Main x="1920" y="0" w="1920" h="1080" current-tab="editor"/>
   <Mixer mixer-rhs-pane1-pos="0.60000002384185791" mixer-rhs_pane2-pos="0.69999998807907104" mixer-list-hpane-pos="0.001123595517128706" mixer-inner-pane-pos="0.83286905288696289" narrow-strips="0" show-mixer="0" show-mixer-list="1" maximised="0" monitor-section-visible="0">
     <Window name="Mixer" visible="0" x-off="0" y-off="0" x-size="1920" y-size="1051" tabbed="0"/>
@@ -114,16 +113,14 @@
   <Meterbridge show-meterbridge="0">
     <geometry x-size="600" y-size="400" x-pos="1" y-pos="1"/>
   </Meterbridge>
-  <Editor id="41" edit-horizontal-pane-pos="0.85911601781845093" notebook-shrunk="1" edit-vertical-pane-pos="0.9220917820930481" mixer-width="Wide" zoom-focus="ZoomFocusMouse" zoom="64" snap-to="SnapToBeatDiv4" snap-mode="SnapMagnetic" internal-snap-to="SnapToBeatDiv8" internal-snap-mode="SnapNormal" pre-internal-snap-to="SnapToBeatDiv4" pre-internal-snap-mode="SnapMagnetic" edit-point="EditAtMouse" visible-track-count="-1" playhead="202216" left-frame="183984" y-origin="1572" show-measures="1" maximised="1" follow-playhead="1" stationary-playhead="0" region-list-sort-type="ByEndInFile" mouse-mode="MouseObject" join-object-range="0" show-editor-mixer="1" show-editor-list="1" editor-list-page="0" show-marker-lines="0" nudge-clock-value="240000">
+  <LastUsedSnapshot name="Sound Effects"/>
+  <Editor id="41" edit-horizontal-pane-pos="0.85911601781845093" notebook-shrunk="1" edit-vertical-pane-pos="0.9220917820930481" mixer-width="Wide" zoom-focus="ZoomFocusMouse" zoom="256" snap-to="SnapToBeatDiv4" snap-mode="SnapMagnetic" internal-snap-to="SnapToBeatDiv8" internal-snap-mode="SnapNormal" pre-internal-snap-to="SnapToBeatDiv4" pre-internal-snap-mode="SnapMagnetic" edit-point="EditAtMouse" visible-track-count="-1" playhead="185648" left-frame="121864" y-origin="0" show-measures="1" maximised="0" follow-playhead="1" stationary-playhead="0" region-list-sort-type="ByEndInFile" mouse-mode="MouseObject" join-object-range="0" show-editor-mixer="1" show-editor-list="1" editor-list-page="0" show-marker-lines="0" nudge-clock-value="240000">
     <Window name="Editor" visible="0" x-off="0" y-off="0" x-size="1272" y-size="667" tabbed="1"/>
     <Buttons>
       <Press/>
       <Release/>
     </Buttons>
     <Selection>
-      <Regions>
-        <Region id="10033"/>
-      </Regions>
       <Marker id="10472" start="0"/>
     </Selection>
     <RegionList sort-type="ByEndInFile" sort-ascending="1" show-all="0" show-automatic-regions="1"/>
