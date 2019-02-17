@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Weapon Empty.wav-12cdbf4c93bdb86d664bd89dd5d93ad5.sample"
+
+[deps]
+
+source_file="res://sounds/Sound Effects/export/Weapon Empty.wav"
+dest_files=[ "res://.import/Weapon Empty.wav-12cdbf4c93bdb86d664bd89dd5d93ad5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
