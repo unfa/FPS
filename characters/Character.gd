@@ -25,7 +25,7 @@ func check_feet_collision():
 
 func heal(hp): #  increase health
 
-	emit_signal("recieved_health", hp)
+	emit_signal("recieved_health")
 	# store the current health
 	var health_old = health
 
@@ -42,7 +42,7 @@ func heal(hp): #  increase health
 	return health_old - health # return the actual amount healed
 
 func hurt(hp): # do damage
-	emit_signal("recieved_damage", hp)
+	emit_signal("recieved_damage")
 
 	health -= hp
 	if health <= 0: # if we're dead now

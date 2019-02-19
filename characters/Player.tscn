@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/Player.gd" type="Script" id=2]
-[ext_resource path="res://objects/weapons/blaster/Blaster.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sounds/Sound Effects/export/Weapon Empty.wav" type="AudioStream" id=4]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/weapons/blaster/Blaster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/Sound Effects/export/Weapon Empty.wav" type="AudioStream" id=5]
 
 [sub_resource type="Environment" id=1]
 
@@ -88,7 +89,9 @@ _sections_unfolded = [ "Adjustments", "Glow", "Glow/levels" ]
 
 script = ExtResource( 2 )
 
-[node name="Head" type="Spatial" parent="." index="0"]
+[node name="HUD" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="Head" type="Spatial" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 _sections_unfolded = [ "Transform" ]
@@ -114,11 +117,11 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362205, -0.334243, -0.458613 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Blaster" parent="Head/Camera/WeaponHandle" index="0" instance=ExtResource( 3 )]
+[node name="Blaster" parent="Head/Camera/WeaponHandle" index="0" instance=ExtResource( 4 )]
 
 [node name="Empty" type="AudioStreamPlayer3D" parent="Head" index="1"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0
@@ -137,7 +140,7 @@ attenuation_filter_db = -12.0
 doppler_tracking = 0
 _sections_unfolded = [ "Doppler" ]
 
-[node name="DebugL" type="Label" parent="." index="2"]
+[node name="DebugL" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -157,7 +160,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="DebugR" type="Label" parent="." index="3"]
+[node name="DebugR" type="Label" parent="." index="4"]
 
 anchor_left = 1.0
 anchor_top = 0.0
@@ -179,7 +182,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="Feet" parent="." index="4"]
+[node name="Feet" parent="." index="5"]
 
 editor/display_folded = true
 

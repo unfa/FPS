@@ -157,7 +157,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 0.4, 0.4, 0.4 )
 
-[node name="Map" type="Spatial" index="0"]
+[node name="Map" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -170,12 +170,18 @@ environment = SubResource( 1 )
 
 _sections_unfolded = [ "Transform" ]
 
+[node name="level" parent="Geometry" index="0"]
+
+editor/display_folded = true
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0204296, -2.38419e-07, -0.10227 )
+
 [node name="AnimationPlayer" parent="Geometry" index="2"]
 
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Lighting" type="Spatial" parent="." index="2"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="Lighting" index="0"]
@@ -206,50 +212,34 @@ _sections_unfolded = [ "Editor", "Shadow" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -44.5962 )
 light_color = Color( 0.443606, 0.249084, 0.828125, 1 )
 light_energy = 0.3
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
-flicker = false
-flare = true
-threshold_on = 0.4
-threshold_off = 0.1
-delay_base = 2
-delay_random = 3
 
 [node name="FlickerOmni4" parent="Lighting" index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -21.3388 )
 light_color = Color( 0.640015, 0.875, 0.328125, 1 )
 light_energy = 0.3
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
-flicker = false
-flare = true
 
 [node name="FlickerOmni2" parent="Lighting" index="3" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9577, 12.0452, -33.1111 )
 light_energy = 0.2
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
-flicker = false
-flare = true
-threshold_on = 0.7
-threshold_off = 0.6
-delay_base = 25
-delay_random = 50
 
 [node name="FlickerOmni3" parent="Lighting" index="4" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5272, 12.0452, -33.1111 )
 light_energy = 0.2
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
-flicker = false
-flare = true
-threshold_on = 0.0
-threshold_off = 0.0
-delay_base = 3
-delay_random = 8
 
 [node name="Flare" parent="Lighting/FlickerOmni3" index="0"]
 
@@ -424,7 +414,7 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0 )
 [node name="Lava" type="Area" parent="Actors" index="0"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662418, 0.148759, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662418, -0.304431, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -517,11 +507,13 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 shape = SubResource( 5 )
 disabled = false
 
-[node name="Pickup" parent="Actors" index="2" instance=ExtResource( 5 )]
+[node name="Pickups" type="Spatial" parent="Actors" index="2"]
+
+[node name="Pickup" parent="Actors/Pickups" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96993, 1.14178 )
 
-[node name="Pickup2" parent="Actors" index="3" instance=ExtResource( 5 )]
+[node name="Pickup2" parent="Actors/Pickups" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357273, -3.1864 )
 contents = {
@@ -536,3 +528,4 @@ contents = {
 
 [editable path="Geometry"]
 [editable path="Lighting/FlickerOmni3"]
+[editable path="Actors/Pickups/Pickup"]

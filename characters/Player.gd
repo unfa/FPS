@@ -248,7 +248,15 @@ func _ready():
 	# capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	# Connect Trigger input to weapon Nodes
 	self.connect("weapon_trigger", $Head/Camera/WeaponHandle/Blaster, "trigger")
+	
+	# Connect Player Events to HUD Scene
+	self.connect("recieved_damage", $HUD, "update")
+	self.connect("recieved_health", $HUD, "update")
+	self.connect("died", $HUD, "update")
+	
+	
 
 	
 func _input(event):

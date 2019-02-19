@@ -137,7 +137,7 @@ tracks/4/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[node name="Blaster" type="Spatial" index="0"]
+[node name="Blaster" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]

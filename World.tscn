@@ -1,14 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/test01/Test01.tscn" type="PackedScene" id=2]
-[ext_resource path="res://hud/touch_controls/ButtonNormal.svg" type="Texture" id=3]
-[ext_resource path="res://hud/touch_controls/ButtonPressed.svg" type="Texture" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 123, 124 )
 
 [node name="World" type="Spatial"]
 
@@ -16,166 +9,29 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Characters" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="Player" parent="Characters" index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.28708, -28.2551 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.28708, 0.370927 )
 collision_mask = 7
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 
-[node name="DebugL" parent="Characters/Player" index="2"]
+[node name="DebugL" parent="Characters/Player" index="3"]
 
 visible = false
 
-[node name="DebugR" parent="Characters/Player" index="3"]
+[node name="DebugR" parent="Characters/Player" index="4"]
 
 visible = false
 
-[node name="Feet" parent="Characters/Player" index="4"]
+[node name="Feet" parent="Characters/Player" index="5"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
 monitorable = true
 collision_layer = 0
 
 [node name="Map" parent="." index="1" instance=ExtResource( 2 )]
-
-[node name="HUD" type="Node" parent="." index="2"]
-
-[node name="BottomLeft" type="Container" parent="HUD" index="0"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_top = -40.0
-margin_right = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="TouchButtonLeft" type="TouchScreenButton" parent="HUD/BottomLeft" index="0"]
-
-position = Vector2( 30.6825, -239.417 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "move_left"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="TouchButtonForward" type="TouchScreenButton" parent="HUD/BottomLeft" index="1"]
-
-position = Vector2( 174.626, -239.417 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "move_forward"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="TouchButtonBackward" type="TouchScreenButton" parent="HUD/BottomLeft" index="2"]
-
-position = Vector2( 174.626, -99.0937 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "move_backward"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="TouchButtonRight" type="TouchScreenButton" parent="HUD/BottomLeft" index="3"]
-
-position = Vector2( 319.471, -239.417 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "move_right"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="BottomRight" type="Container" parent="HUD" index="1"]
-
-editor/display_folded = true
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -40.0
-margin_top = -40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="TouchButtonJump" type="TouchScreenButton" parent="HUD/BottomRight" index="0"]
-
-position = Vector2( -246.51, -251.152 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "move_jump"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="TouchButtonFire" type="TouchScreenButton" parent="HUD/BottomRight" index="1"]
-
-position = Vector2( -106.479, -251.152 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "move_forward"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="TouchButtonCrouch" type="TouchScreenButton" parent="HUD/BottomRight" index="2"]
-
-position = Vector2( -246.51, -107.814 )
-scale = Vector2( 0.5, 0.5 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 4 )
-bitmask = null
-shape = SubResource( 1 )
-shape_centered = true
-shape_visible = true
-passby_press = false
-action = "weapon_fire_primary"
-visibility_mode = 1
-_sections_unfolded = [ "Transform" ]
 
 
 [editable path="Characters/Player"]

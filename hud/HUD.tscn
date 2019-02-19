@@ -1,0 +1,190 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://hud/HUD.gd" type="Script" id=1]
+[ext_resource path="res://hud/touch_controls/ButtonNormal.svg" type="Texture" id=2]
+[ext_resource path="res://hud/touch_controls/ButtonPressed.svg" type="Texture" id=3]
+[ext_resource path="res://hud/fonts/LiberationSans-Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 123, 124 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=3]
+
+default_font = SubResource( 2 )
+
+[node name="HUD" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="BottomLeft" type="Container" parent="." index="0"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TouchButtonLeft" type="TouchScreenButton" parent="BottomLeft" index="0"]
+
+position = Vector2( 30.6825, -239.417 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_left"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="TouchButtonForward" type="TouchScreenButton" parent="BottomLeft" index="1"]
+
+position = Vector2( 174.626, -239.417 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_forward"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="TouchButtonBackward" type="TouchScreenButton" parent="BottomLeft" index="2"]
+
+position = Vector2( 174.626, -99.0937 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_backward"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="TouchButtonRight" type="TouchScreenButton" parent="BottomLeft" index="3"]
+
+position = Vector2( 319.471, -239.417 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_right"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomRight" type="Container" parent="." index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TouchButtonJump" type="TouchScreenButton" parent="BottomRight" index="0"]
+
+position = Vector2( -246.51, -251.152 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_jump"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="TouchButtonFire" type="TouchScreenButton" parent="BottomRight" index="1"]
+
+position = Vector2( -106.479, -251.152 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "move_forward"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="TouchButtonCrouch" type="TouchScreenButton" parent="BottomRight" index="2"]
+
+position = Vector2( -246.51, -107.814 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 1 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "weapon_fire_primary"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="HP" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 219.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = SubResource( 3 )
+text = "HP: 100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Theme" ]
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+
