@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://maps/test01/Test01.gd" type="Script" id=1]
 [ext_resource path="res://maps/test01/test01.dae" type="PackedScene" id=2]
 [ext_resource path="res://objects/lights/FlickerOmni.tscn" type="PackedScene" id=3]
 [ext_resource path="res://maps/test01/Lava.gd" type="Script" id=4]
 [ext_resource path="res://objects/pickups/Pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/pickups/health/HealthPickup.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
 
@@ -157,7 +158,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 0.4, 0.4, 0.4 )
 
-[node name="Map" type="Spatial"]
+[node name="Map" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -168,6 +169,7 @@ environment = SubResource( 1 )
 
 [node name="Geometry" parent="." index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="level" parent="Geometry" index="0"]
@@ -175,7 +177,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0204296, -2.38419e-07, -0.10227 )
 
-[node name="AnimationPlayer" parent="Geometry" index="2"]
+[node name="AnimationPlayer" parent="Geometry" index="36"]
 
 _sections_unfolded = [ "Playback Options" ]
 
@@ -212,7 +214,6 @@ _sections_unfolded = [ "Editor", "Shadow" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -44.5962 )
 light_color = Color( 0.443606, 0.249084, 0.828125, 1 )
 light_energy = 0.3
-light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -221,7 +222,6 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -21.3388 )
 light_color = Color( 0.640015, 0.875, 0.328125, 1 )
 light_energy = 0.3
-light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -229,7 +229,6 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9577, 12.0452, -33.1111 )
 light_energy = 0.2
-light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -237,13 +236,8 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5272, 12.0452, -33.1111 )
 light_energy = 0.2
-light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
-
-[node name="Flare" parent="Lighting/FlickerOmni3" index="0"]
-
-color = Color( 1, 1, 1, 1 )
 
 [node name="OmniLight3" type="OmniLight" parent="Lighting" index="5"]
 
@@ -516,10 +510,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96993, 1.14178 )
 [node name="Pickup2" parent="Actors/Pickups" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357273, -3.1864 )
-contents = {
-"ammo_blaster": 25,
-"weapon_blaster": 1
-}
+
+[node name="HealthPickup" parent="Actors/Pickups" index="2" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180206, -0.641243 )
+HealthSize = 25
+
+[node name="HealthPickup3" parent="Actors/Pickups" index="3" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.411538, 0.0922639, -0.641243 )
+
+[node name="HealthPickup2" parent="Actors/Pickups" index="4" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364632, 0.275984, -0.641243 )
+HealthSize = 100
 
 [connection signal="body_entered" from="Actors/Lava" to="Actors/Lava" method="_on_Lava_body_entered"]
 

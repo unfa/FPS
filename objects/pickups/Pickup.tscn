@@ -1,70 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/pickups/Pickup.gd" type="Script" id=1]
-
-[sub_resource type="SphereShape" id=1]
-
-radius = 0.1
-
-[sub_resource type="SpatialMaterial" id=2]
-
-render_priority = 0
-flags_transparent = true
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 0.25, 0.25, 0.25, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = true
-emission = Color( 0.125, 1, 0.302734, 1 )
-emission_energy = 1.0
-emission_operator = 0
-emission_on_uv2 = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Parameters" ]
+[ext_resource path="res://objects/pickups/health/health_pickup_materiall.tres" type="Material" id=2]
 
 [sub_resource type="SphereMesh" id=3]
 
-material = SubResource( 2 )
+material = ExtResource( 2 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 radius = 0.1
 height = 0.2
@@ -72,42 +13,16 @@ radial_segments = 16
 rings = 8
 is_hemisphere = false
 
-[node name="Pickup" type="Area"]
+[sub_resource type="SphereShape" id=1]
 
-input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 2
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
+radius = 0.1
+
+[node name="Pickup" type="Spatial"]
+
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
-contents = {
-"ammo_blaster": 25,
-"health": 10,
-"weapon_blaster": 1
-}
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="0"]
-
-shape = SubResource( 1 )
-disabled = false
-
-[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
 layers = 1
 material_override = null
@@ -121,7 +36,45 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
+_sections_unfolded = [ "Transform" ]
 
-[connection signal="body_entered" from="." to="." method="_on_Pickup_body_entered"]
+[node name="Area" type="Area" parent="." index="1"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+
+shape = SubResource( 1 )
+disabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 
 

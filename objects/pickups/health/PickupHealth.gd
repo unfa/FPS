@@ -2,7 +2,7 @@ extends "res://objects/pickups/Pickup.gd"
 
 export var hp = 25
 
-var contents = {"health" : hp}
+#var contents = {"health" : hp}
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
