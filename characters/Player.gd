@@ -239,6 +239,10 @@ func walk(delta):
 	actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 func _ready():
+	
+	# basic inventory
+	inventory = { "blaster": 1, "ammo_blaster": 100 }
+	
 	# determine of we're running on desktop or mobile platforms:
 	if OS.get_name() in ["Android", "iOS"]:
 		platform = PLATFORM.mobile

@@ -68,7 +68,7 @@ material = SubResource( 1 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 1, 1 )
 
-[node name="SuperOmni" type="OmniLight" index="0"]
+[node name="SuperOmni" type="OmniLight"]
 
 layers = 1
 light_color = Color( 0.786026, 0.902344, 0.880534, 1 )

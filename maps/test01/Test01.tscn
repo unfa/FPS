@@ -158,7 +158,7 @@ _sections_unfolded = [ "Albedo" ]
 
 extents = Vector3( 0.4, 0.4, 0.4 )
 
-[node name="Map" type="Spatial" index="0"]
+[node name="Map" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -387,11 +387,11 @@ bake_mode = 0
 bake_propagation = 1.0
 bake_energy = 1.0
 bake_hdr = false
-bake_extents = Vector3( 17.0139, 7.98078, 16.3077 )
+bake_extents = Vector3( 17.0139, 7.98078, 16.1219 )
 capture_cell_size = 0.5
 image_path = "."
 light_data = SubResource( 2 )
-_sections_unfolded = [ "Bake", "Visibility" ]
+_sections_unfolded = [ "Bake", "Capture", "Visibility" ]
 
 [node name="Spawnpoints" type="Spatial" parent="." index="4"]
 
@@ -502,6 +502,8 @@ shape = SubResource( 5 )
 disabled = false
 
 [node name="Pickups" type="Spatial" parent="Actors" index="2"]
+
+editor/display_folded = true
 
 [node name="Pickup" parent="Actors/Pickups" index="0" instance=ExtResource( 5 )]
 

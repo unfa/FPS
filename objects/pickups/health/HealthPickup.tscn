@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/pickups/health/health.dae" type="PackedScene" id=1]
 [ext_resource path="res://objects/pickups/health/HealthPickup.gd" type="Script" id=2]
@@ -17,6 +17,25 @@ is_hemisphere = false
 [sub_resource type="SphereShape" id=1]
 
 radius = 0.1
+
+[sub_resource type="Shader" id=4]
+
+code = ""
+
+[sub_resource type="ShaderMaterial" id=5]
+
+render_priority = 0
+shader = SubResource( 4 )
+
+[sub_resource type="Shader" id=6]
+
+code = ""
+
+[sub_resource type="ShaderMaterial" id=7]
+
+render_priority = 0
+next_pass = SubResource( 5 )
+shader = SubResource( 6 )
 
 [node name="HealthPickup" instance=ExtResource( 1 )]
 
@@ -80,7 +99,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -1 )
 visible = false
-material/0 = ExtResource( 3 )
+material/0 = SubResource( 7 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Cube.002" parent="." index="4"]
