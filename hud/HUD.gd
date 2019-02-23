@@ -8,6 +8,7 @@ func damage():
 	pass
 
 func update():
+	yield(get_tree(), "idle_frame") # wait one frame, or this data will not be up to date
 	print ("hud update!")
 	$HP.text = "HP: " + str($"../".health)
 
