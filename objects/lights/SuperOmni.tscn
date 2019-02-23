@@ -5,12 +5,12 @@
 [ext_resource path="res://sounds/Sound Effects/export/Flicker On.wav" type="AudioStream" id=3]
 [ext_resource path="res://sounds/Sound Effects/export/Flicker Off.wav" type="AudioStream" id=4]
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=1]
 
 flags = 23
 load_path = "res://.import/flare_01.png-fe090612e070ff4f268b4df1922937e9.s3tc.stex"
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
 flags_transparent = true
@@ -37,7 +37,7 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = 0
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = SubResource( 3 )
+albedo_texture = SubResource( 1 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -66,9 +66,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Flags", "Parameters", "Vertex Color" ]
 
-[sub_resource type="QuadMesh" id=2]
+[sub_resource type="QuadMesh" id=3]
 
-material = SubResource( 4 )
+material = SubResource( 2 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 3, 3 )
 
@@ -105,6 +105,7 @@ delay_random = 15
 
 [node name="Flare" type="MeshInstance" parent="." index="0"]
 
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 0
@@ -114,7 +115,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 script = ExtResource( 2 )
