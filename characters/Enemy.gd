@@ -4,6 +4,12 @@ extends "res://characters/Character.gd"
 # var a = 2
 # var b = "textvar"
 
+var debug = false
+
+# AI stuff
+
+var players = {} # all players present in the game
+
 # state machine
 
 var state_pain = false
@@ -39,17 +45,25 @@ const WALK_DECELERATION = 0.4
 const WALK_GRAVITY = 9.8 * 4
 const WALK_JUMP = 5 * 2.5
 
-func death():
-	state_alive = false # kill it
-	$Body.disabled = true # disable collision
-	$AnimationPlayer.play("death") # play death animation
-
 func walk(delta):
 	
 		# get where is the player looking currently
 	var aim = $Head/Blaster.get_transform().basis
 	# reset the target walking direction so we have a clean slate
 	direction = Vector3()
+	
+	if players.empty(): # if there are no players listed, let's check for them
+		players = self.get_tree().get_nodes_in_group("Players")
+	else: # since we have a list of players, let's check if any of them are in sight
+		for player in players:
+			#var sight = Vector3(0,0,1)
+			#sight.angle_to(player.location.origin)
+			#print("Enemy watching: ", player, " angle: ", sight)
+			print(player)
+			
+			if not get_tree().get_nodes_in_group("players").empty():
+				get_tree().get_nodes_in_group("players")[1].get_location()
+			
 	
 	if state_alive:
 		pass
@@ -85,10 +99,10 @@ func walk(delta):
 			target = target * WALK_SPEED_SPRINT
 	
 		# jumping
-		if Input.is_action_just_pressed("move_jump") and is_on_floor(): # if we are on the floor and want to jump
-			velocity_y = WALK_JUMP # then jump
-		elif is_on_floor(): # if we are on the floor, but not want to jump
-			velocity_y = -0.15  # make sure the Y velocity is low, so we can fall off an edge properly
+#		if Input.is_action_just_pressed("move_jump") and is_on_floor(): # if we are on the floor and want to jump
+#			velocity_y = WALK_JUMP # then jump
+#		elif is_on_floor(): # if we are on the floor, but not want to jump
+#			velocity_y = -0.15  # make sure the Y velocity is low, so we can fall off an edge properly
 		
 		target_xz = Vector2(target.x, target.z) * delta
 		#target_y = target.y * delta
@@ -125,18 +139,26 @@ func walk(delta):
 
 func enemy_hurt():
 	yield(get_tree(), "idle_frame") # wait for the data to be updated
-	print("Charecter hurt:", self.name, " HP: ", self.health)
+	if debug:
+		print("Charecter hurt:", self.name, " HP: ", self.health)
 
 func _ready():
 	# start inventory for the enemy
 	inventory = { "weapon_blaster": 1, "ammo_blaster": 10000 }
+	
+	# Connect Trigger input to weapon Nodes
+	self.connect("weapon_trigger", $Head/Blaster, "trigger")
 
 	connect("recieved_damage", self, "enemy_hurt")
-	connect("died", self, "death")
+	connect("recieved_damage", self, "enemy_hurt")
+	#connect("died", self, "death")
 	
 	$Head/Blaster.user = self
 	
-	print("Enemy init passed")
+	if debug:
+		print("Enemy init passed")
+		
+		var players = self.get_tree().get_nodes_in_group("Players")
 
 func _process(delta):
 	pass

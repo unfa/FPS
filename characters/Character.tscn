@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://characters/Character.gd" type="Script" id=1]
+
+[sub_resource type="RayShape" id=3]
+
+length = 0.038565
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -29,16 +33,24 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 health = 100
 health_max = 100
 
-[node name="Body" type="CollisionShape" parent="." index="0"]
+[node name="Ground" type="CollisionShape" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.189039, 0 )
+shape = SubResource( 3 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Body" type="CollisionShape" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Feet" type="Area" parent="." index="1"]
+[node name="Feet" type="Area" parent="." index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192853, 0 )
+visible = false
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0

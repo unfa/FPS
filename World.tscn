@@ -21,6 +21,10 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 
 editor/display_folded = true
 
+[node name="Ground" parent="Characters/Player" index="2"]
+
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
+
 [node name="DebugL" parent="Characters/Player" index="3"]
 
 visible = false
@@ -29,9 +33,8 @@ visible = false
 
 visible = false
 
-[node name="Feet" parent="Characters/Player" index="5"]
+[node name="Feet" parent="Characters/Player" index="7"]
 
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
 monitorable = true
 collision_layer = 0
 

@@ -24,6 +24,13 @@ func check_feet_collision():
 		return true
 	else:
 		return false
+		
+func death():
+	state_alive = false # kill it
+	$Body.disabled = true # disable body collision
+	$Ground.disabled = false # enable ground collision
+	$AnimationPlayer.play("death") # play death animation
+	self.collision_layer
 
 func heal(hp): #  increase health
 
@@ -64,7 +71,7 @@ func kill():
 		return false # you can't kill something that's dead!
 
 func _ready():
-	pass
+	connect("died", self, "death")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
