@@ -59,10 +59,10 @@ func walk(delta):
 			#var sight = Vector3(0,0,1)
 			#sight.angle_to(player.location.origin)
 			#print("Enemy watching: ", player, " angle: ", sight)
-			print(player)
+			#print(player)
 			
 			if not get_tree().get_nodes_in_group("players").empty():
-				get_tree().get_nodes_in_group("players")[1].get_location()
+				print(get_tree().get_nodes_in_group("players")[1].get_location())
 			
 	
 	if state_alive:
@@ -149,7 +149,6 @@ func _ready():
 	# Connect Trigger input to weapon Nodes
 	self.connect("weapon_trigger", $Head/Blaster, "trigger")
 
-	connect("recieved_damage", self, "enemy_hurt")
 	connect("recieved_damage", self, "enemy_hurt")
 	#connect("died", self, "death")
 	
