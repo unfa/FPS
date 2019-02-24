@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://maps/test01/Test01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://maps/test01/Test01.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Spatial"]
 
@@ -11,9 +12,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="Characters" index="0" instance=ExtResource( 1 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.28708, 0.370927 )
 collision_mask = 7
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+
+[node name="Head" parent="Characters/Player" index="1"]
+
+editor/display_folded = true
 
 [node name="DebugL" parent="Characters/Player" index="3"]
 
@@ -29,7 +35,17 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0
 monitorable = true
 collision_layer = 0
 
-[node name="Map" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Enemies" type="Spatial" parent="Characters" index="1"]
+
+[node name="Enemy" parent="Characters/Enemies" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 0.316439, 0, 0.948613, 0, 1, 0, -0.948613, 0, 0.316439, -2.56453, 2.74509, -4.8357 )
+
+[node name="Enemy2" parent="Characters/Enemies" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( -0.129724, 0, -0.99155, 0, 1, 0, 0.99155, 0, -0.129724, 2.39265, 2.74509, -11.8344 )
+
+[node name="Map" parent="." index="1" instance=ExtResource( 3 )]
 
 
 [editable path="Characters/Player"]

@@ -230,7 +230,7 @@ size = Vector2( 0.2, 0.2 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[node name="BlasterProjectileHit" type="Spatial" index="0"]
+[node name="BlasterProjectileHit" type="Spatial"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]

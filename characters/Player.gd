@@ -11,8 +11,6 @@ var gyro_lerp = 0.5
 var gyro = Vector3()
 var gyro_previous = Vector3()
 
-var inventory = {} # storting all the stuff players can pick up
-
 var direction = Vector3()
 var interpolation = 1
 var velocity = Vector3()
@@ -241,7 +239,7 @@ func walk(delta):
 func _ready():
 	
 	# basic inventory
-	inventory = { "blaster": 1, "ammo_blaster": 100 }
+	inventory = { "weapon_blaster": 1, "ammo_blaster": 100 }
 	
 	# determine of we're running on desktop or mobile platforms:
 	if OS.get_name() in ["Android", "iOS"]:
@@ -254,6 +252,9 @@ func _ready():
 	
 	# Connect Trigger input to weapon Nodes
 	self.connect("weapon_trigger", $Head/Camera/WeaponHandle/Blaster, "trigger")
+	
+	$Head/Camera/WeaponHandle/Blaster.user = self
+	
 	
 	# Connect Player Events to HUD Scene
 	self.connect("recieved_damage", $HUD, "update")

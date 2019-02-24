@@ -4,6 +4,8 @@ signal weapon_empty
 
 var fire_ready = true
 
+var user = null
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -18,18 +20,19 @@ func _ready():
 	# Initialization here
 	
 	# get the player node
-	connect("weapon_empty", $"../../../..", "weapon_empty")
+	connect("weapon_empty", user, "weapon_empty")
 	pass
 	
 func trigger():
 	if fire_ready:
-		if $"../../../..".inventory.has("ammo_blaster") and $"../../../..".inventory["ammo_blaster"] > 0: # check if we have the proper ammo in inventory and check if the amount is higher than zero
+		if user.inventory.has("ammo_blaster") and user.inventory["ammo_blaster"] > 0: # check if we have the proper ammo in inventory and check if the amount is higher than zero
 				$AnimationPlayer.play("FirePrimary") # run the animation
-				$"../../../..".inventory["ammo_blaster"] -= 1 # consume ammo
+				user.inventory["ammo_blaster"] -= 1 # consume ammo
 				
 				#instantiate the projectile
 				var projectile_instance = projectile.instance()
 				projectile_instance.global_transform = $ProjectileSpawner.global_transform
+				projectile_instance.user = user
 				get_tree().root.add_child(projectile_instance)
 		else:
 			emit_signal("weapon_empty")

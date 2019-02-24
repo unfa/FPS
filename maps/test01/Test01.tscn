@@ -177,6 +177,10 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0204296, -2.38419e-07, -0.10227 )
 
+[node name="level 16" parent="Geometry" index="8"]
+
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.0405159, -0.115275, 0.0845289 )
+
 [node name="AnimationPlayer" parent="Geometry" index="36"]
 
 _sections_unfolded = [ "Playback Options" ]
@@ -214,6 +218,7 @@ _sections_unfolded = [ "Editor", "Shadow" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -44.5962 )
 light_color = Color( 0.443606, 0.249084, 0.828125, 1 )
 light_energy = 0.3
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -222,6 +227,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -21.3388 )
 light_color = Color( 0.640015, 0.875, 0.328125, 1 )
 light_energy = 0.3
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -229,6 +235,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9577, 12.0452, -33.1111 )
 light_energy = 0.2
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -236,6 +243,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5272, 12.0452, -33.1111 )
 light_energy = 0.2
+light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
@@ -403,6 +411,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.15
 
 [node name="Actors" type="Spatial" parent="." index="5"]
 
+editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0 )
 
 [node name="Lava" type="Area" parent="Actors" index="0"]
@@ -503,15 +512,17 @@ disabled = false
 
 [node name="Pickups" type="Spatial" parent="Actors" index="2"]
 
-editor/display_folded = true
-
 [node name="Pickup" parent="Actors/Pickups" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96993, 1.14178 )
 
+[node name="MeshInstance" parent="Actors/Pickups/Pickup" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11908, 0 )
+
 [node name="Pickup2" parent="Actors/Pickups" index="1" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357273, -3.1864 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0708141, -3.1864 )
 
 [node name="HealthPickup" parent="Actors/Pickups" index="2" instance=ExtResource( 6 )]
 

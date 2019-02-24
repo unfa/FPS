@@ -16,7 +16,7 @@ func _ready():
 	# Initialization here
 	#print("Health Size: ", HealthSize)
 	self.contents = { "health": HealthSize }
-	print(contents)
+	#print(contents)
 	
 	if HealthSize == SMALL:
 		$MeshInstance.mesh = $"Cube.002".mesh

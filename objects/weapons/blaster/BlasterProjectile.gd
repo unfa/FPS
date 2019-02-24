@@ -7,6 +7,10 @@ extends Spatial
 var hit = preload("res://objects/weapons/blaster/BlasterProjectileHit.tscn")
 
 export var velocity = 35.0
+export var damage = 10
+var debug = true
+
+var user = null
 
 #func _process(delta):
 	
@@ -14,6 +18,7 @@ export var velocity = 35.0
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	$Collision.add_exception(user) # do not collide with the character that shots the gun...
 	pass
 
 func _physics_process(delta):
@@ -23,6 +28,16 @@ func _physics_process(delta):
 	if not $Collision.is_colliding():
 		translate(Vector3(0, 0, -velocity * delta))
 	else:
+		# hurt wahtever we did hit
+		
+		var victim = $Collision.get_collider()
+		
+		if victim.has_method("hurt"):
+			victim.hurt(damage)
+			if debug:
+				print("Hurting: ", victim.name)
+		
+		
 		velocity = 0
 		$AudioStreamPlayer3D.stop()
 		$SuperOmni.hide()
@@ -50,10 +65,12 @@ func _physics_process(delta):
 		
 
 func _on_Area_area_entered(area):
-	print("area entered: ", area)
+	pass
+	#print("area entered: ", area)
 
 
 func _on_Area_body_entered(body):
-	print("body entered: ", body)
+	pass
+	#print("body entered: ", body)
 	
 	

@@ -85,7 +85,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Adjustments", "Glow", "Glow/levels" ]
 
-[node name="Player" instance=ExtResource( 1 )]
+[node name="Player" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -185,6 +185,7 @@ _sections_unfolded = [ "Anchor", "Rect" ]
 [node name="Feet" parent="." index="5"]
 
 editor/display_folded = true
+collision_layer = 1
 
 [node name="CollisionShape" parent="Feet" index="0"]
 

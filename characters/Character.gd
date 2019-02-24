@@ -11,6 +11,8 @@ signal weapon_change
 export var health = 100
 export var health_max = 100
 
+var inventory = {} # storting all the stuff players can pick up
+
 var feet_collision_count = 0
 var feet_collision = false
 
@@ -62,8 +64,6 @@ func kill():
 		return false # you can't kill something that's dead!
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 
 #func _process(delta):

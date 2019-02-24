@@ -20,7 +20,8 @@ func _ready():
 	
 	var mat = mesh.get_material().duplicate(false)
 	mesh.set_material(mat)
-	print(mat)
+	if debug:
+		print(mat)
 
 func _physics_process(delta):
 
