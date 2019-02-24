@@ -122,6 +122,10 @@ func gyrolook():
 		$Head/Camera.rotate_x(deg2rad(camera_angle_change))
 		camera_angle += camera_angle_change
 	
+func death():
+	state_alive = false # kill it
+	#$Body.disabled = true # disable collision
+	$AnimationPlayer.play("death") # play death animation
 
 func fly(delta):
 		# get where is the player looking currently
@@ -252,6 +256,8 @@ func _ready():
 	
 	# Connect Trigger input to weapon Nodes
 	self.connect("weapon_trigger", $Head/Camera/WeaponHandle/Blaster, "trigger")
+	
+	connect("died", self, "death")
 	
 	$Head/Camera/WeaponHandle/Blaster.user = self
 	

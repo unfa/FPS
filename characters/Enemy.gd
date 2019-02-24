@@ -74,8 +74,9 @@ func walk(delta):
 	if state_alive:
 		
 		if $Sensors/Front.is_colliding():
-			if $Sensors/Front.get_collider().name == "Player":
-				emit_signal("weapon_trigger")
+			# if what we see is the player, and he's not dead
+			if $Sensors/Front.get_collider().name == "Player" and $Sensors/Front.get_collider().state_alive:
+				emit_signal("weapon_trigger") # shoot 'em
 		
 		# check if we should sprint or walk (sprint is default)
 		if Input.is_action_pressed("move_sprint"):
