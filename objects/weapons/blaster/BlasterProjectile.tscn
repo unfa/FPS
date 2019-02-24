@@ -220,7 +220,7 @@ material = SubResource( 11 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 0.3, 0.3 )
 
-[node name="BlasterProjectile" type="Spatial"]
+[node name="BlasterProjectile" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 velocity = 35.0
