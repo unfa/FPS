@@ -13,6 +13,8 @@ var players = {} # all players present in the game
 # state machine
 
 var state_pain = false
+var pain_delay = 1 # how long does the pain state last?
+
 var state_idle = true
 var state_alert = false
 var state_attack = false
@@ -85,8 +87,7 @@ func walk(delta):
 	direction = direction.normalized()
 	target = direction
 		
-	if state_alive:
-		
+	if state_alive and not state_pain:
 		if $Sensors/Front.is_colliding():
 			# if what we see is the player, and he's not dead
 			if $Sensors/Front.get_collider().name == "Player" and $Sensors/Front.get_collider().state_alive:
@@ -138,8 +139,13 @@ func walk(delta):
 	actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
 
 func enemy_hurt():
-	yield(get_tree(), "idle_frame") # wait for the data to be updated
+	if not state_pain:
+		state_pain = true
+		yield(get_tree().create_timer(pain_delay), "timeout")
+		state_pain = false
+	
 	if debug:
+		yield(get_tree(), "idle_frame") # wait for the data to be updated
 		print("Charecter hurt:", self.name, " HP: ", self.health)
 
 func _ready():
