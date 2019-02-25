@@ -2,31 +2,34 @@ extends Spatial
 
 signal weapon_empty
 
-var delay = 0.5
-var user = null
-var ready = true
+var delay = 0.5 # firing delay
+var user = null # who's weilding the weapon? (Will be filled by the user himself)
+var ready = true # is the gun ready to fire the next shot (by default it is)
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+
+# preload the projectile scene
 const projectile = preload("res://objects/weapons/blaster/BlasterProjectile.tscn")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	
-	# get the player node
+	# connect event to user so he can reac to firing an empty gun
 	connect("weapon_empty", user, "weapon_empty")
 	pass
 	
 func trigger():
 	if not ready: # if the gun is not ready - ignore the request
 		return 1
-		
-	if user.inventory.has("ammo_blaster") and user.inventory["ammo_blaster"] > 0: # check if we have the proper ammo in inventory and check if the amount is higher than zero
-		ready = false
-		$AnimationPlayer.play("FirePrimary") # run the animation
+	
+	#  if the user has any ammo for the weapon, we can fire	it
+	if user.inventory.has("ammo_blaster") and user.inventory["ammo_blaster"] > 0: 
+		ready = false # make sure the user can't fire more than one shot at a time
 		user.inventory["ammo_blaster"] -= 1 # consume ammo
+		$AnimationPlayer.play("FirePrimary") # run the animation 
 			
 		#instantiate the projectile
 		var projectile_instance = projectile.instance()
@@ -34,17 +37,14 @@ func trigger():
 		projectile_instance.user = user
 		get_tree().root.add_child(projectile_instance)
 		
-		# create firing delay
+		# create fire delay
 		yield(get_tree().create_timer(delay), "timeout")
+		
+		# unlock the gun for the next shot
 		ready = true
-	else:
+	else: # if we have no ammo - let the user know
 		emit_signal("weapon_empty")
 	
-#func _input(event):
-#	pass
 
-func _process(delta):
-	# Called every frame. Delta is time since last frame.
-	# Update game logic here.
-	#print(fire_ready)
-	pass
+#func _process(delta):
+#	pass
