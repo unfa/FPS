@@ -237,6 +237,7 @@ func walk(delta):
 	actual_velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 func _ready():
+
 	
 	# basic inventory
 	inventory = { "weapon_blaster": 1, "ammo_blaster": 100 }

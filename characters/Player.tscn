@@ -116,7 +116,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 90, 0, 0 ) ]
 }
 
-[node name="Player" index="0" groups=[
+[node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
 
