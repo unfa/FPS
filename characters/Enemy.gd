@@ -49,7 +49,7 @@ const WALK_JUMP = 5 * 2.5
 
 func walk(delta):
 	
-		# get where is the player looking currently
+	# get where is the player looking currently
 	var aim = $Head/Blaster.get_transform().basis
 	# reset the target walking direction so we have a clean slate
 	direction = Vector3()
@@ -63,8 +63,19 @@ func walk(delta):
 			#print("Enemy watching: ", player, " angle: ", sight)
 			#print(player)
 			
-			if not get_tree().get_nodes_in_group("players").empty():
-				print(get_tree().get_nodes_in_group("players")[1].get_location())
+			var head = $Head.global_transform.origin
+			var target = player.global_transform.origin
+			
+			var to_player = target - head # vector poiting to player
+			
+			var forward = $Head.global_transform.basis.get_euler()
+			
+			# TODO - watch this: https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
+			
+			var angle_to_player = to_player.normalized() - forward.normalized()
+		
+			print(angle_to_player.normalized())
+			
 			
 	
 	if state_alive:

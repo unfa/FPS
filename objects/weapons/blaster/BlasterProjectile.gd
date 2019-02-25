@@ -8,8 +8,7 @@ var hit = preload("res://objects/weapons/blaster/BlasterProjectileHit.tscn")
 
 export var velocity = 35.0
 export var damage = 10
-var debug = true
-
+var debug = false
 var user = null
 
 #func _process(delta):
