@@ -1,56 +1,64 @@
 extends "res://characters/Character.gd"
 
-enum PLATFORM{desktop, mobile}
+enum PLATFORM{desktop, mobile} # are we running on desktop or mobile?
 
 var platform = 0
 
-var camera_angle = 0
-var mouse_sensitivity = 0.2
-var gyro_sensitivity = 0.2
-var gyro_lerp = 0.5
-var gyro = Vector3()
-var gyro_previous = Vector3()
+var camera_angle = 0 # camera tilt (up/down)
+var mouse_sensitivity = 0.2 # multiplier for mouse motion input
+var gyro_sensitivity = 0.2 # multipier for gyroscope input
+var gyro_lerp = 0.5 # motion smoothing for the gyroscope (helps with shaky hands)
+var gyro = Vector3() # current gyroscope input
+var gyro_previous = Vector3() # previous frame's gyroscope input
 
-var direction = Vector3()
-var interpolation = 1
-var velocity = Vector3()
-var actual_velocity = Vector3()
-var velocity_xz = Vector2()
-var velocity_y = 0
-var target = Vector3()
+var direction = Vector3() # motion vector (relative to Player's rotation)
+var interpolation = 1  # 
+var velocity = Vector3() # target motion velocity 
+var actual_velocity = Vector3() # current motion velocity (we're constanlty lerping it to the velocity)
+var velocity_xz = Vector2() # the horizonal plane component of the velocity
+var velocity_y = 0 # the vertical axis component of the movement vector
+var target = Vector3() 
 var target_xz = Vector2()
 var target_y = 0
 
 ### the follwing is to implement fall damage
+# TODO - implement fall damage
 var velocity_previous = Vector3()
 var on_floor_previous = true
-const UNSAFE_VELOCITY = 1000 # how fast we need to hit something to get damage
-const UNSAFE_VELOCITY_FACTOR = 0.1 # how much damage for every length unit of the velocit vector on hit
+const UNSAFE_VELOCITY = 1000 # how fast we need to hit something to get damage (not tested)
+const UNSAFE_VELOCITY_FACTOR = 0.1 # how much damage for every length unit of the velocit vector on hit (not tested)
 
+# movement mode constants
+const FLY_SPEED = 300 # how fast can you fly?
+const FLY_SPEED_SPRINT = 850 # how fast can you fly in a hurry?
 
-const FLY_SPEED = 300
-const FLY_SPEED_SPRINT = 850
+const FLY_ACCELERATION = 0.25 # lerp factor for increasing velocity
+const FLY_DECELERATION = 0.25 # lerp factor for decreasing velocity
 
-const FLY_ACCELERATION = 0.25
-const FLY_DECELERATION = 0.25
+const WALK_SPEED = 300 # walking on the ground
+const WALK_SPEED_SPRINT = 700 # running on the ground
 
-const WALK_SPEED = 300
-const WALK_SPEED_SPRINT = 700
+const WALK_AIR_CONTROL = 0.1 # how much effect do you hae on your XZ motion when not touching the ground?
 
-const WALK_AIR_CONTROL = 0.1
+const WALK_ACCELERATION = 0.75 # lerping for gaing speed
+const WALK_DECELERATION = 0.4 # lerping for loosing speed
 
-const WALK_ACCELERATION = 0.75
-const WALK_DECELERATION = 0.4
+const WALK_GRAVITY = 9.8 * 4 # how much the gravity pulls you down?
+const WALK_JUMP = 5 * 2.5 # the jump force/speed/height
 
-const WALK_GRAVITY = 9.8 * 4
-const WALK_JUMP = 5 * 2.5
+### HOW PLAYER MOVEMENT WORKS
+# The Player's root node (Kinematic Body) moves, but never rotates. What rotates is the head (left/right). and camera (up/down)
+# This might be changed later if it proves a better solution - the movement could use some clean up (especialy teh vars/consts and their names)
+# I think the movement is pretty pleasant and it feels very good to me (- unfa)
 
 func weapon_empty():
-	$Head/Empty.play()
+	$Head/Empty.play() # play a sound effect to let the user know he's running dry
 
-func debug():
-	$DebugL.text = ""
+func debug(): # this function show some debug data on screen - it's easier to look at than a bunch of prints
+	# each frame start wiht a clean slate
+	$DebugL.text = "" 
 
+	# then add some text
 	$DebugL.text += "direction " + String(direction) +"\n"
 	$DebugL.text += "target " + String(target) +"\n"
 	$DebugL.text += "velocity " + String(velocity) +"\n"
@@ -75,44 +83,47 @@ func debug():
 #	$Debug.text += "\nAccelerometer: " + String(Input.get_accelerometer())
 #	$Debug.text += "\nMagnetometer: " + String(Input.get_magnetometer())
 
-func pickup(contents):
-	var used = false # track if we actually use anything
-	for item in contents: # for ecvery item in the pickup do
+func pickup(contents): # function that takes stuff from the world and puts them in your inventory
+	var consumed = false # track if we actually use anything , by default we don't - for example we won't use a health pickup if we're at 100 health, so there's not reason to waste it
+	for item in contents: # for every item in the pickup contents do
 		if item == "health": # if we're picking up health packs
-			if heal(contents[item]): # let's use the immediately
-				used = true
+			if heal(contents[item]): # let's use them immediately - there's no health items we can use later (this is not an RPG game!)
+				consumed = true # mark the pickup as used, so the item itself will be consumed
 		else:
 			if inventory.has(item): # check if we already have this type of item
 				inventory[item] += contents[item] # increase the stock amount
-				used = true
+				consumed = true
 			else: # if we don't have any yet
 				inventory[item] = contents[item] # create a new entry in the inventory 
-				used = true
+				consumed = true
 	
-	return used # tell the pickup object if we got it, so it can deactivate
+	return consumed # tell the pickup object if it should disappear, or not
 
-func mouselook(event):
-	# apply Y rotation (turn the head)
-		$Head.rotate_y(-deg2rad(event.relative.x) * mouse_sensitivity)
-		
-		# calculate the X rotation (angle the camera)
-		var camera_angle_change = -event.relative.y * mouse_sensitivity
-		var camera_angle_new = camera_angle + camera_angle_change
-		
-		# clip the camera angle
-		#TODO - this gives some room for error, so it could be improved later, but it's quite good for now
-		if camera_angle_new < 90 and camera_angle_new > -90:
-			$Head/Camera.rotate_x(deg2rad(camera_angle_change))
-			camera_angle += camera_angle_change
+func mouselook(event): # this function takes mouse movement input and applies it to player and camera rotation
+	
+	# apply Y rotation (turn the head left and right)
+	$Head.rotate_y(-deg2rad(event.relative.x) * mouse_sensitivity)
+	
+	# calculate the X rotation (angle the camera up and down)
+	var camera_angle_change = -event.relative.y * mouse_sensitivity
+	var camera_angle_new = camera_angle + camera_angle_change
+	
+	# clip the camera angle - the player can't turn his head up forever
+	#TODO - this gives some room for error, so it could be improved later, but it's quite good for now
+	if camera_angle_new < 90 and camera_angle_new > -90:
+		$Head/Camera.rotate_x(deg2rad(camera_angle_change))
+		camera_angle += camera_angle_change
 
-func gyrolook():
-	gyro_previous = gyro
+func gyrolook(): # this function takes gyroscope input (mobile devices) and applies it to player and camera rotation
+	gyro_previous = gyro  # store last frames' data so we can apply time interpolation (smooth out the input)
+	
+	# get this frame's gyroscope data, and lerp it with the previous frme's data so we get time smoothing
 	gyro = Input.get_gyroscope().linear_interpolate(gyro_previous, gyro_lerp)
 
-	# apply Y rotation (turn the head)
+	# apply Y rotation (turn the head left and right)
 	$Head.rotate_y(gyro.y * gyro_sensitivity)
 	
-	# calculate the X rotation (angle the camera)
+	# calculate the X rotation (angle the camera up and down)
 	var camera_angle_change = rad2deg(gyro.x) * mouse_sensitivity
 	var camera_angle_new = camera_angle + camera_angle_change
 	
