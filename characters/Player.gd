@@ -59,15 +59,14 @@ func weapon_empty():
 
 func debug(): # this function show some debug data on screen - it's easier to look at than a bunch of prints
 	# each frame start wiht a clean slate
-	
+	$"HUD/Debug".text = ""
 
 	# then add some text
-	$"HUD/Debug".text = ""
+	$"HUD/Debug".text += "Player camera euler: " + String($"Head/Camera".global_transform.basis.get_euler()) +"\n"
 	
 	#$"HUD/Debug".text += "Player.basis.z " + String($"Head".global_transform.basis.z) +"\n"
 	
 	# get the global vector we're loooking at
-	$"HUD/Debug".text += "Camera.basis.get_euler() " + String($"Head/Camera".global_transform.basis.get_euler()) +"\n"
 	
 #	$DebugL.text += "direction " + String(direction) +"\n"
 #	$DebugL.text += "target " + String(target) +"\n"
