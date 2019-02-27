@@ -30,7 +30,7 @@ func death():
 	$Body.disabled = true # disable body collision
 	$Ground.disabled = false # enable ground collision
 	$AnimationPlayer.play("death") # play death animation
-	self.collision_layer
+	#self.collision_layer
 
 func heal(hp): #  increase health
 

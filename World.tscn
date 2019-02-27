@@ -25,15 +25,7 @@ editor/display_folded = true
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1, 0 )
 
-[node name="DebugL" parent="Characters/Player" index="3"]
-
-visible = false
-
-[node name="DebugR" parent="Characters/Player" index="4"]
-
-visible = false
-
-[node name="Feet" parent="Characters/Player" index="7"]
+[node name="Feet" parent="Characters/Player" index="5"]
 
 monitorable = true
 collision_layer = 0

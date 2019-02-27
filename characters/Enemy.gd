@@ -74,7 +74,7 @@ func walk(delta):
 			
 			var angle_to_player = to_player.normalized() - forward.normalized()
 		
-			print(angle_to_player.normalized())
+			#print(angle_to_player.normalized())
 			
 			
 	

@@ -51,31 +51,38 @@ const WALK_JUMP = 5 * 2.5 # the jump force/speed/height
 # This might be changed later if it proves a better solution - the movement could use some clean up (especialy teh vars/consts and their names)
 # I think the movement is pretty pleasant and it feels very good to me (- unfa)
 
+func damage():
+	$AnimationPlayer.play("damage")
+
 func weapon_empty():
 	$Head/Empty.play() # play a sound effect to let the user know he's running dry
 
 func debug(): # this function show some debug data on screen - it's easier to look at than a bunch of prints
 	# each frame start wiht a clean slate
-	$DebugL.text = "" 
+	
 
 	# then add some text
-	$DebugL.text += "direction " + String(direction) +"\n"
-	$DebugL.text += "target " + String(target) +"\n"
-	$DebugL.text += "velocity " + String(velocity) +"\n"
-	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
+	$"HUD/Debug".text = ""
 	
-	$DebugL.text += "health " + String(health) +"\n"
-	$DebugL.text += "inventory " + String(inventory) +"\n"
+	$"HUD/Debug".text += "basis " + String($Head.global_transform.basis.z) +"\n"
 	
-	$DebugR.text = String(Engine.get_frames_per_second()) + " FPS"
-	
-	$DebugL.text += "on_floor_previous " + String(on_floor_previous) + "\n"
-	
-	$DebugL.text += "feet_collision_count " + String(feet_collision_count) + "\n"
-	$DebugL.text += "feet_collision " + String(check_feet_collision()) + "\n"
-	
-	$DebugL.text += "platform " + String(PLATFORM.keys()[platform]) + "\n"
-	$DebugL.text += "gyro " + String(gyro) + "\n"
+#	$DebugL.text += "direction " + String(direction) +"\n"
+#	$DebugL.text += "target " + String(target) +"\n"
+#	$DebugL.text += "velocity " + String(velocity) +"\n"
+#	$DebugL.text += "actual_velocity " + String(actual_velocity) +"\n"
+#
+#	$DebugL.text += "health " + String(health) +"\n"
+#	$DebugL.text += "inventory " + String(inventory) +"\n"
+#
+#	$DebugR.text = String(Engine.get_frames_per_second()) + " FPS"
+#
+#	$DebugL.text += "on_floor_previous " + String(on_floor_previous) + "\n"
+#
+#	$DebugL.text += "feet_collision_count " + String(feet_collision_count) + "\n"
+#	$DebugL.text += "feet_collision " + String(check_feet_collision()) + "\n"
+#
+#	$DebugL.text += "platform " + String(PLATFORM.keys()[platform]) + "\n"
+#	$DebugL.text += "gyro " + String(gyro) + "\n"
 	
 	# print out sensor information
 #	$Debug.text = "Gravity: " + String(Input.get_gravity())
@@ -264,6 +271,7 @@ func _ready():
 	
 	# Connect Trigger input to weapon Nodes
 	self.connect("weapon_trigger", $Head/Camera/WeaponHandle/Blaster, "trigger")
+	self.connect("recieved_damage", self, "damage")
 	
 	#connect("died", self, "death")
 	
@@ -297,7 +305,7 @@ func _physics_process(delta):
 	walk(delta)
 
 func _process(delta):
-	#debug()
+	debug()
 		
 	# exit game
 	if Input.is_action_just_pressed("game_exit"):
