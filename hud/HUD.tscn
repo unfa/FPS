@@ -21,7 +21,7 @@ font_data = ExtResource( 4 )
 
 default_font = SubResource( 2 )
 
-[node name="HUD" type="Node" index="0"]
+[node name="HUD" type="Node"]
 
 script = ExtResource( 1 )
 

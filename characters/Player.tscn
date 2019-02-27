@@ -64,26 +64,26 @@ dof_blur_near_distance = 2.0
 dof_blur_near_transition = 1.0
 dof_blur_near_amount = 0.1
 dof_blur_near_quality = 1
-glow_enabled = false
+glow_enabled = true
 glow_levels/1 = true
-glow_levels/2 = true
-glow_levels/3 = true
+glow_levels/2 = false
+glow_levels/3 = false
 glow_levels/4 = false
 glow_levels/5 = false
 glow_levels/6 = false
 glow_levels/7 = false
-glow_intensity = 1.5
+glow_intensity = 1.0
 glow_strength = 1.0
-glow_bloom = 0.0
+glow_bloom = 1.0
 glow_blend_mode = 2
 glow_hdr_threshold = 1.0
-glow_hdr_scale = 2.0
+glow_hdr_scale = 1.0
 glow_bicubic_upscale = true
 adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Adjustments", "Glow/levels" ]
+_sections_unfolded = [ "Adjustments", "Glow", "Glow/levels" ]
 
 [sub_resource type="Animation" id=3]
 
@@ -153,10 +153,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -1.01341, 0.506794 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( -0.404867, -0.910338, 0.506794 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Head/Camera:rotation_degrees")
@@ -195,7 +195,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.3 ]
 }
 
-[node name="Player" index="0" groups=[
+[node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
 
