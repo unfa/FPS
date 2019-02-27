@@ -64,7 +64,10 @@ func debug(): # this function show some debug data on screen - it's easier to lo
 	# then add some text
 	$"HUD/Debug".text = ""
 	
-	$"HUD/Debug".text += "basis " + String($Head.global_transform.basis.z) +"\n"
+	#$"HUD/Debug".text += "Player.basis.z " + String($"Head".global_transform.basis.z) +"\n"
+	
+	# get the global vector we're loooking at
+	$"HUD/Debug".text += "Camera.basis.get_euler() " + String($"Head/Camera".global_transform.basis.get_euler()) +"\n"
 	
 #	$DebugL.text += "direction " + String(direction) +"\n"
 #	$DebugL.text += "target " + String(target) +"\n"

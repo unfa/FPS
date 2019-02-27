@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://hud/touch_controls/ButtonNormal.svg" type="Texture" id=2]
@@ -20,6 +20,23 @@ font_data = ExtResource( 4 )
 [sub_resource type="Theme" id=3]
 
 default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+
+hinting = 2
+font_path = "res://hud/fonts/LiberationMono-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 18
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 4 )
+_sections_unfolded = [ "Font", "Font/fallback", "Settings" ]
+
+[sub_resource type="Theme" id=6]
+
+default_font = SubResource( 5 )
 
 [node name="HUD" type="Node"]
 
@@ -201,8 +218,11 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+theme = SubResource( 6 )
+text = "Debug"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Theme" ]
 
 

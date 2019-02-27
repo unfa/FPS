@@ -4,7 +4,7 @@
 [ext_resource path="res://characters/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/test01/Test01.tscn" type="PackedScene" id=3]
 
-[node name="World" type="Spatial" index="0"]
+[node name="World" type="Spatial"]
 
 _sections_unfolded = [ "Transform" ]
 
