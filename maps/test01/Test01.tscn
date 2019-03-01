@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://maps/test01/Test01.gd" type="Script" id=1]
 [ext_resource path="res://maps/test01/test01.dae" type="PackedScene" id=2]
@@ -84,16 +84,69 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[sub_resource type="BakedLightmapData" id=2]
+[sub_resource type="SpatialMaterial" id=2]
 
-bounds = AABB( -17.0139, -7.98078, -16.3077, 34.0278, 15.9616, 32.6154 )
-cell_space_transform = Transform( 7.52326, 0, 0, 0, 7.52326, 0, 0, 0, 7.52326, 128, 60.0415, 122.687 )
-cell_subdiv = 9
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 0.390625, 0.390625, 0.390625, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.42
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Roughness" ]
+
+[sub_resource type="BakedLightmapData" id=3]
+
+bounds = AABB( -51.4496, -32.0129, -30.9591, 102.899, 64.0257, 61.9181 )
+cell_space_transform = Transform( 4.97575, 0, 0, 0, 4.97575, 0, 0, 0, 4.97575, 256, 159.288, 154.044 )
+cell_subdiv = 10
 energy = 1.0
 octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
 user_data = [  ]
+_sections_unfolded = [ "Resource" ]
 
-[node name="Map" type="Spatial"]
+[node name="Map" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -106,22 +159,17 @@ environment = SubResource( 1 )
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="level" parent="Geometry" index="0"]
+[node name="level 13" parent="Geometry" index="0"]
 
-editor/display_folded = true
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0204296, -2.38419e-07, -0.10227 )
+material/0 = SubResource( 2 )
+_sections_unfolded = [ "Geometry", "material" ]
 
-[node name="level 16" parent="Geometry" index="8"]
-
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.0405159, -0.115275, 0.0845289 )
-
-[node name="AnimationPlayer" parent="Geometry" index="36"]
+[node name="AnimationPlayer" parent="Geometry" index="1"]
 
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Lighting" type="Spatial" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="Lighting" index="0"]
@@ -133,7 +181,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -145,13 +193,14 @@ omni_range = 18.1446
 omni_attenuation = 1.0
 omni_shadow_mode = 0
 omni_shadow_detail = 1
-_sections_unfolded = [ "Editor", "Shadow" ]
+_sections_unfolded = [ "Editor", "Light", "Shadow" ]
 
 [node name="FlickerOmni" parent="Lighting" index="1" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -44.5962 )
 light_color = Color( 0.443606, 0.249084, 0.828125, 1 )
 light_energy = 0.3
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
@@ -161,6 +210,7 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135211, 12.0452, -21.3388 )
 light_color = Color( 0.640015, 0.875, 0.328125, 1 )
 light_energy = 0.3
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
@@ -169,14 +219,17 @@ _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9577, 12.0452, -33.1111 )
 light_energy = 0.2
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
 
 [node name="FlickerOmni3" parent="Lighting" index="4" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5272, 12.0452, -33.1111 )
 light_energy = 0.2
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
@@ -190,7 +243,7 @@ light_energy = 0.15
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -213,7 +266,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -236,7 +289,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -259,7 +312,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -282,7 +335,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -305,7 +358,7 @@ light_energy = 1.0
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
-light_bake_mode = 1
+light_bake_mode = 2
 light_cull_mask = -1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
@@ -321,19 +374,19 @@ _sections_unfolded = [ "Light", "Omni", "Shadow" ]
 
 [node name="BakedLightmap" type="BakedLightmap" parent="." index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87556, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.53479, -18.9321 )
 layers = 1
 bake_cell_size = 0.25
-bake_quality = 1
-bake_mode = 0
+bake_quality = 2
+bake_mode = 1
 bake_propagation = 1.0
 bake_energy = 1.0
-bake_hdr = false
-bake_extents = Vector3( 17.0139, 7.98078, 16.1219 )
+bake_hdr = true
+bake_extents = Vector3( 51.4496, 32.0129, 30.9591 )
 capture_cell_size = 0.5
-image_path = "."
-light_data = SubResource( 2 )
-_sections_unfolded = [ "Bake", "Capture", "Visibility" ]
+image_path = "res://maps/test01"
+light_data = SubResource( 3 )
+_sections_unfolded = [ "Bake", "Capture", "Data", "Visibility" ]
 
 [node name="Spawnpoints" type="Spatial" parent="." index="4"]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://hud/touch_controls/ButtonNormal.svg" type="Texture" id=2]
 [ext_resource path="res://hud/touch_controls/ButtonPressed.svg" type="Texture" id=3]
 [ext_resource path="res://hud/fonts/LiberationSans-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://hud/crosshair/crosshair.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -224,5 +225,30 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme" ]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="." index="4"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch = true
+stretch_shrink = 1
+
+[node name="Crosshair" type="Sprite" parent="ViewportContainer" index="0"]
+
+position = Vector2( 32, 32 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 

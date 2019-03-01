@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://objects/pickups/health/health.dae" type="PackedScene" id=1]
 [ext_resource path="res://objects/pickups/health/HealthPickup.gd" type="Script" id=2]
 [ext_resource path="res://objects/pickups/health/health_pickup_materiall.tres" type="Material" id=3]
+[ext_resource path="res://sounds/Sound Effects/export/Healthpack Small.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/Sound Effects/export/Healthpack Medium.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/Sound Effects/export/Healthpack Large.wav" type="AudioStream" id=6]
 
-[sub_resource type="SphereMesh" id=3]
+[sub_resource type="SphereMesh" id=1]
 
 material = ExtResource( 3 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
@@ -14,28 +17,28 @@ radial_segments = 16
 rings = 8
 is_hemisphere = false
 
-[sub_resource type="SphereShape" id=1]
+[sub_resource type="SphereShape" id=2]
 
 radius = 0.1
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=3]
 
 code = ""
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=4]
 
 render_priority = 0
-shader = SubResource( 4 )
+shader = SubResource( 3 )
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=5]
 
 code = ""
 
-[sub_resource type="ShaderMaterial" id=7]
+[sub_resource type="ShaderMaterial" id=6]
 
 render_priority = 0
-next_pass = SubResource( 5 )
-shader = SubResource( 6 )
+next_pass = SubResource( 4 )
+shader = SubResource( 5 )
 
 [node name="HealthPickup" instance=ExtResource( 1 )]
 
@@ -54,7 +57,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = ExtResource( 3 )
 _sections_unfolded = [ "Geometry", "Transform" ]
@@ -85,7 +88,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Collision" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 disabled = false
 
 [node name="Cube" parent="." index="2"]
@@ -99,7 +102,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -1 )
 visible = false
-material/0 = SubResource( 7 )
+material/0 = SubResource( 6 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="Cube.002" parent="." index="4"]
@@ -108,6 +111,71 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -2 )
 visible = false
 material/0 = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "material" ]
+
+[node name="Sounds" type="Spatial" parent="." index="6"]
+
+[node name="Small" type="AudioStreamPlayer3D" parent="Sounds" index="0"]
+
+stream = ExtResource( 4 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 15000.0
+attenuation_filter_db = -6.0
+doppler_tracking = 0
+_sections_unfolded = [ "Attenuation Filter" ]
+
+[node name="Medium" type="AudioStreamPlayer3D" parent="Sounds" index="1"]
+
+stream = ExtResource( 5 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 15000.0
+attenuation_filter_db = -6.0
+doppler_tracking = 0
+_sections_unfolded = [ "Attenuation Filter" ]
+
+[node name="Large" type="AudioStreamPlayer3D" parent="Sounds" index="2"]
+
+stream = ExtResource( 6 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 15000.0
+attenuation_filter_db = -6.0
+doppler_tracking = 0
+_sections_unfolded = [ "Attenuation Filter" ]
 
 [connection signal="body_entered" from="Collision" to="." method="_on_Collision_body_entered"]
 

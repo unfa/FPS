@@ -53,9 +53,17 @@ const WALK_JUMP = 5 * 2.5 # the jump force/speed/height
 
 func damage():
 	$AnimationPlayer.play("damage")
+	if health >= 70:
+		$"Head/Sounds/Damage 1".play()
+	elif health >= 50:
+		$"Head/Sounds/Damage 2".play()
+	elif health > 0:
+		$"Head/Sounds/Damage 3".play()
+	else:
+		$"Head/Sounds/Death".play()
 
 func weapon_empty():
-	$Head/Empty.play() # play a sound effect to let the user know he's running dry
+	$Head/Sounds/Empty.play() # play a sound effect to let the user know he's running dry
 
 func debug(): # this function show some debug data on screen - it's easier to look at than a bunch of prints
 	# each frame start wiht a clean slate

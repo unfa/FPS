@@ -1,649 +1,1597 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <UndoHistory>
-  <UndoTransaction tv-sec="1550181888" tv-usec="855379" name="adjust region gain">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
+  <UndoTransaction tv-sec="1551298087" tv-usec="72036" name="Region start trim">
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
       <Changes>
-        <scale-amplitude from="2.5118868350982666" to="2.8183832168579102"/>
+        <start from="586508" to="580508"/>
+        <length from="22415" to="28415"/>
+        <position from="1314000" to="1308000"/>
+        <beat from="54.75" to="54.5"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17525" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+22415 0.99999999316496391
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17526" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+6000 0.99999999111116367
+28415 0.99999999316496391
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
       </Changes>
     </StatefulDiffCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1086771" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10159"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1086771" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10159"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181888" tv-usec="897378" name="adjust region gain">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
+  <UndoTransaction tv-sec="1551298090" tv-usec="459444" name="Region start trim">
+    <StatefulDiffCommand obj-id="16716" type-name="ARDOUR::AudioRegion">
       <Changes>
-        <scale-amplitude from="2.8183832168579102" to="3.1622781753540039"/>
+        <start from="30562" to="28066"/>
+        <length from="10845" to="13341"/>
+        <position from="756562" to="754066"/>
+        <beat from="31.52341666666667" to="31.419416666666667"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17780" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994479887411
+2438 0.99999994039535522
+10845 0.99999994116565627
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17781" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994479887411
+2496 0.99999994479887411
+4934 0.99999994039535522
+13341 0.99999994116565627
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16727" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="75900" to="73404"/>
+        <length from="12595" to="15091"/>
+        <position from="801900" to="799404"/>
+        <beat from="33.412500000000001" to="33.308499999999995"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17783" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994432611716
+12595 0.99999994548014859
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17784" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994432611716
+2496 0.99999994432611716
+15091 0.99999994548014859
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16771" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="128882" to="126386"/>
+        <length from="11263" to="13759"/>
+        <position from="854882" to="852386"/>
+        <beat from="35.620083333333334" to="35.516083333333334"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17786" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994918065394
+11263 0.99999995021263932
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17787" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994918065394
+2496 0.99999994918065394
+13759 0.99999995021263932
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16793" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="173626" to="171130"/>
+        <length from="20869" to="23365"/>
+        <position from="899626" to="897130"/>
+        <beat from="37.484416666666661" to="37.380416666666669"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17789" interpolation-style="Linear" state="Off">
+              <events>0 0.99999995328037461
+20869 0.99999995519252083
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17790" interpolation-style="Linear" state="Off">
+              <events>0 0.99999995328037461
+2496 0.99999995328037461
+23365 0.99999995519252083
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16804" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="247475" to="244979"/>
+        <length from="23181" to="25677"/>
+        <position from="973475" to="970979"/>
+        <beat from="40.561458333333334" to="40.457458333333335"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17792" interpolation-style="Linear" state="Off">
+              <events>0 0.9999999600468743
+23181 0.99999996217086018
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17793" interpolation-style="Linear" state="Off">
+              <events>0 0.9999999600468743
+2496 0.9999999600468743
+25677 0.99999996217086018
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16815" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="271832" to="269336"/>
+        <length from="130" to="2626"/>
+        <position from="997832" to="995336"/>
+        <beat from="41.576333333333331" to="41.472333333333331"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17795" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996227861254
+130 0.9999999622905239
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17796" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996227861254
+2496 0.99999996227861254
+2626 0.9999999622905239
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16837" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="315962" to="313466"/>
+        <length from="16682" to="19178"/>
+        <position from="1041962" to="1039466"/>
+        <beat from="43.415083333333335" to="43.311083333333336"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17798" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996632207466
+16682 0.99999996785058209
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17799" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996632207466
+2496 0.99999996632207466
+19178 0.99999996785058209
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16870" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="381800" to="379304"/>
+        <length from="30087" to="32583"/>
+        <position from="1107800" to="1105304"/>
+        <beat from="46.158333333333331" to="46.054333333333332"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17801" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997235455729
+30087 0.99999997511131333
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17802" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997235455729
+2496 0.99999997235455729
+32583 0.99999997511131333
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16881" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="459300" to="456804"/>
+        <length from="25356" to="27852"/>
+        <position from="1185300" to="1182804"/>
+        <beat from="49.387500000000003" to="49.283499999999997"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17804" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997945558405
+25356 0.99999998177885674
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17805" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997945558405
+2496 0.99999997945558405
+27852 0.99999998177885674
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <start from="580508" to="578012"/>
+        <length from="28415" to="30911"/>
+        <position from="1308000" to="1305504"/>
+        <beat from="54.5" to="54.396000000000001"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="17807" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+6000 0.99999999111116367
+28415 0.99999999316496391
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="17808" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
       </Changes>
     </StatefulDiffCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="663312" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10159"/>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="663312" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10159"/>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181888" tv-usec="931425" name="adjust region gain">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
+  <UndoTransaction tv-sec="1551298091" tv-usec="426963" name="change fade in length">
+    <MementoCommand obj-id="16926" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16926" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16926" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16882" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16882" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16882" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16871" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16871" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16871" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16838" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16838" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16838" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16816" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16816" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16816" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+2625 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16805" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16805" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16805" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16794" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16794" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16794" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16772" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16772" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16772" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16728" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16728" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16728" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16717" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadein" id="16717" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+64 1
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadein" id="16717" interpolation-style="Curved" state="Off">
+        <events>0 1.0000000116860974e-07
+3054 1
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="663312" y-origin="1756">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="663312" y-origin="1756">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298098" tv-usec="525157" name="Region end trim">
+    <StatefulDiffCommand obj-id="16716" type-name="ARDOUR::AudioRegion">
       <Changes>
-        <scale-amplitude from="3.1622781753540039" to="3.5481345653533936"/>
+        <length from="13341" to="28733"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18074" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994479887411
+2496 0.99999994479887411
+4934 0.99999994039535522
+13341 0.99999994116565627
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18075" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994479887411
+2496 0.99999994479887411
+4934 0.99999994039535522
+13341 0.99999994116565627
+28733 0.99999994116565627
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16727" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="15091" to="30483"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18077" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994432611716
+2496 0.99999994432611716
+15091 0.99999994548014859
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18078" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994432611716
+2496 0.99999994432611716
+15091 0.99999994548014859
+30483 0.99999994548014859
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16771" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="13759" to="29151"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18080" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994918065394
+2496 0.99999994918065394
+13759 0.99999995021263932
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18081" interpolation-style="Linear" state="Off">
+              <events>0 0.99999994918065394
+2496 0.99999994918065394
+13759 0.99999995021263932
+29151 0.99999995021263932
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16793" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="23365" to="38757"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18083" interpolation-style="Linear" state="Off">
+              <events>0 0.99999995328037461
+2496 0.99999995328037461
+23365 0.99999995519252083
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18084" interpolation-style="Linear" state="Off">
+              <events>0 0.99999995328037461
+2496 0.99999995328037461
+23365 0.99999995519252083
+38757 0.99999995519252083
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16804" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="25677" to="41069"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18086" interpolation-style="Linear" state="Off">
+              <events>0 0.9999999600468743
+2496 0.9999999600468743
+25677 0.99999996217086018
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18087" interpolation-style="Linear" state="Off">
+              <events>0 0.9999999600468743
+2496 0.9999999600468743
+25677 0.99999996217086018
+41069 0.99999996217086018
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16815" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="2626" to="18018"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18089" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996227861254
+2496 0.99999996227861254
+2626 0.9999999622905239
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18090" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996227861254
+2496 0.99999996227861254
+2626 0.9999999622905239
+18018 0.9999999622905239
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16837" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="19178" to="34570"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18092" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996632207466
+2496 0.99999996632207466
+19178 0.99999996785058209
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18093" interpolation-style="Linear" state="Off">
+              <events>0 0.99999996632207466
+2496 0.99999996632207466
+19178 0.99999996785058209
+34570 0.99999996785058209
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16870" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="32583" to="47975"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18095" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997235455729
+2496 0.99999997235455729
+32583 0.99999997511131333
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18096" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997235455729
+2496 0.99999997235455729
+32583 0.99999997511131333
+47975 0.99999997511131333
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16881" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="27852" to="43244"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18098" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997945558405
+2496 0.99999997945558405
+27852 0.99999998177885674
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18099" interpolation-style="Linear" state="Off">
+              <events>0 0.99999997945558405
+2496 0.99999997945558405
+27852 0.99999998177885674
+43244 0.99999998177885674
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="30911" to="46303"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18101" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18102" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+46303 0.99999999316496391
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
       </Changes>
     </StatefulDiffCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="416" left-frame="619008" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10159"/>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="416" left-frame="619008" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10159"/>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
           </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181888" tv-usec="980003" name="adjust region gain">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
-      <Changes>
-        <scale-amplitude from="3.5481345653533936" to="3.9810724258422852"/>
-      </Changes>
-    </StatefulDiffCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181889" tv-usec="22118" name="adjust region gain">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
-      <Changes>
-        <scale-amplitude from="3.9810724258422852" to="4.4668374061584473"/>
-      </Changes>
-    </StatefulDiffCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181889" tv-usec="58709" name="adjust region gain">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
-      <Changes>
-        <scale-amplitude from="4.4668374061584473" to="5.0118741989135742"/>
-      </Changes>
-    </StatefulDiffCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="176416" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181890" tv-usec="358587" name="region drag">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
-      <Changes>
-        <position from="187544" to="198000"/>
-        <beat from="7.8143333333333329" to="8.25"/>
-      </Changes>
-    </StatefulDiffCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="64" left-frame="141472" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="64" left-frame="141472" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181892" tv-usec="837255" name="region drag">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
-      <Changes>
-        <position from="198000" to="193776"/>
-        <beat from="8.25" to="8.0739999999999998"/>
-      </Changes>
-    </StatefulDiffCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="64" left-frame="141472" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="64" left-frame="141472" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181895" tv-usec="546280" name="region drag">
-    <StatefulDiffCommand obj-id="10159" type-name="ARDOUR::AudioRegion">
-      <Changes>
-        <position from="193776" to="199312"/>
-        <beat from="8.0739999999999998" to="8.304666666666666"/>
-      </Changes>
-    </StatefulDiffCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10159"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181896" tv-usec="837466" name="Region end trim">
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="9609" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181897" tv-usec="793065" name="change fade out length">
-    <MementoCommand obj-id="10036" type-name="ARDOUR::AutomationList">
-      <AutomationList automation-id="fadeout" id="10036" interpolation-style="Curved" state="Off">
+  <UndoTransaction tv-sec="1551298099" tv-usec="746596" name="change fade out length">
+    <MementoCommand obj-id="16928" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16928" interpolation-style="Curved" state="Off">
         <events>0 1
 64 1.0000000116860974e-07
 </events>
       </AutomationList>
-      <AutomationList automation-id="fadeout" id="10036" interpolation-style="Curved" state="Off">
+      <AutomationList automation-id="fadeout" id="16928" interpolation-style="Curved" state="Off">
         <events>0 1
-455 1.0000000116860974e-07
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16884" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16884" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16884" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16873" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16873" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16873" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16840" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16840" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16840" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16818" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16818" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16818" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16807" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16807" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16807" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16796" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16796" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16796" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16774" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16774" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16774" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16730" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16730" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16730" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+    </MementoCommand>
+    <MementoCommand obj-id="16719" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16719" interpolation-style="Curved" state="Off">
+        <events>0 1
+64 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16719" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
 </events>
       </AutomationList>
     </MementoCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="416" left-frame="619008" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="416" left-frame="619008" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
+            <Region id="16881"/>
+            <Region id="16870"/>
+            <Region id="16837"/>
+            <Region id="16815"/>
+            <Region id="16804"/>
+            <Region id="16793"/>
+            <Region id="16771"/>
+            <Region id="16727"/>
+            <Region id="16716"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181898" tv-usec="387172" name="region drag">
-    <StatefulDiffCommand obj-id="10033" type-name="ARDOUR::AudioRegion">
+  <UndoTransaction tv-sec="1551298101" tv-usec="883543" name="remove region">
+    <StatefulDiffCommand obj-id="16837" type-name="ARDOUR::AudioRegion">
       <Changes>
-        <position from="185632" to="187104"/>
-        <beat from="0" to="7.7960000000000012"/>
+        <layering-index from="7" to="6"/>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16870" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <layering-index from="8" to="7"/>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16881" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <layering-index from="9" to="8"/>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <layering-index from="10" to="9"/>
+      </Changes>
+    </StatefulDiffCommand>
+    <StatefulDiffCommand obj-id="8452" type-name="ARDOUR::AudioPlaylist">
+      <Changes>
+        <Regions>
+          <Remove id="16815"/>
+        </Regions>
       </Changes>
     </StatefulDiffCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="816400" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16815"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="816400" y-origin="1756">
+        <Selection/>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298182" tv-usec="146932" name="Region end trim">
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="46303" to="72303"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18192" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+46303 0.99999999316496391
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18193" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+72303 0.99999999316496391
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1265472" y-origin="1756">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="9609" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1265472" y-origin="1756">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+          </Regions>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181903" tv-usec="698150" name="new CD marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="CD1" start="187120" end="189712" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
+  <UndoTransaction tv-sec="1551298189" tv-usec="163191" name="Region end trim">
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="72303" to="50496"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18220" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+72303 0.99999999316496391
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18221" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+50496 0.99999999316496391
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1202008" y-origin="1820">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1202008" y-origin="1820">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298192" tv-usec="719467" name="change fade out length">
+    <MementoCommand obj-id="16928" type-name="ARDOUR::AutomationList">
+      <AutomationList automation-id="fadeout" id="16928" interpolation-style="Curved" state="Off">
+        <events>0 1
+8798 1.0000000116860974e-07
+</events>
+      </AutomationList>
+      <AutomationList automation-id="fadeout" id="16928" interpolation-style="Curved" state="Off">
+        <events>0 1
+14007 1.0000000116860974e-07
+</events>
+      </AutomationList>
     </MementoCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1202216" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="32" left-frame="169424" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1202216" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="9609" start="0"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181905" tv-usec="658416" name="move marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="CD1" start="187120" end="189712" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="CD1" start="187096" end="189712" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-    </MementoCommand>
+  <UndoTransaction tv-sec="1551298193" tv-usec="657473" name="Region end trim">
+    <StatefulDiffCommand obj-id="16925" type-name="ARDOUR::AudioRegion">
+      <Changes>
+        <length from="50496" to="46128"/>
+        <Envelope>
+          <from>
+            <AutomationList automation-id="envelope" id="18251" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+50496 0.99999999316496391
+</events>
+            </AutomationList>
+          </from>
+          <to>
+            <AutomationList automation-id="envelope" id="18252" interpolation-style="Linear" state="Off">
+              <events>0 0.99999999111116367
+8496 0.99999999111116367
+30911 0.99999999316496391
+46128 0.99999999316496391
+</events>
+            </AutomationList>
+          </to>
+        </Envelope>
+      </Changes>
+    </StatefulDiffCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="8" left-frame="183136" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1202216" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="10455" start="1"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="8" left-frame="183136" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1202216" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="10455" start="1"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181907" tv-usec="283832" name="move marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="CD1" start="187096" end="189712" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="CD1" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-    </MementoCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="8" left-frame="183136" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10455" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="8" left-frame="183136" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10455" start="0"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
-  <UndoTransaction tv-sec="1550181910" tv-usec="760788" name="rename marker">
+  <UndoTransaction tv-sec="1551298205" tv-usec="345383" name="new CD marker">
     <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
       <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
         <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
         <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
         <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
         <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="CD1" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-    </MementoCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="8" left-frame="183136" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10455" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="8" left-frame="183136" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10455" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181915" tv-usec="14270" name="new CD marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10472" name="CD1" start="199368" end="203128" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-    </MementoCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10455" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10455" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181916" tv-usec="698514" name="move marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10472" name="CD1" start="199368" end="203128" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10472" name="CD1" start="199320" end="203128" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-    </MementoCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10472" start="1"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10472" start="1"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181918" tv-usec="48696" name="move marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10472" name="CD1" start="199320" end="203128" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10472" name="CD1" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-    </MementoCommand>
-    <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10472" start="0"/>
-        </Selection>
-      </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
-        <Selection>
-          <Regions>
-            <Region id="10033"/>
-          </Regions>
-          <Marker id="10472" start="0"/>
-        </Selection>
-      </SelectionMemento>
-    </MementoCommand>
-  </UndoTransaction>
-  <UndoTransaction tv-sec="1550181922" tv-usec="390858" name="rename marker">
-    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
-        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="10472" name="CD1" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-      </Locations>
-      <Locations>
-        <Location id="269" name="session" start="0" end="514687" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
-        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
-        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
-        <Location id="8516" name="xrun" start="513664" end="513664" flags="IsMark" locked="0" position-lock-style="AudioTime"/>
         <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
         <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
         <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="CD1" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
       </Locations>
     </MementoCommand>
     <MementoCommand obj-id="42" type-name="SelectionMemento">
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="104" left-frame="745396" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="10472" start="0"/>
         </Selection>
       </SelectionMemento>
-      <SelectionMemento mouse-mode="MouseObject" zoom="16" left-frame="186792" y-origin="1572">
+      <SelectionMemento mouse-mode="MouseObject" zoom="104" left-frame="745396" y-origin="1820">
         <Selection>
           <Regions>
-            <Region id="10033"/>
+            <Region id="16925"/>
           </Regions>
-          <Marker id="10472" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298221" tv-usec="352548" name="rename marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="CD1" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="104" left-frame="745396" y-origin="1820">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+          </Regions>
+          <Marker id="18255" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="104" left-frame="745396" y-origin="1820">
+        <Selection>
+          <Regions>
+            <Region id="16925"/>
+          </Regions>
+          <Marker id="18255" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298228" tv-usec="665442" name="new CD marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="CD1" start="894000" end="938798" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="416" left-frame="734958" y-origin="1884">
+        <Selection>
+          <Marker id="18255" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="416" left-frame="734958" y-origin="1884">
+        <Selection>
+          <Marker id="18255" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298231" tv-usec="68101" name="move marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="CD1" start="894000" end="938798" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="CD1" start="897120" end="938798" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="828350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="828350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298233" tv-usec="885134" name="move marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="CD1" start="897120" end="938798" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="CD1" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="828350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="828350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298237" tv-usec="113824" name="rename marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="CD1" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="828350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="828350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298245" tv-usec="123246" name="new CD marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="CD1" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="932350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="932350" y-origin="1884">
+        <Selection>
+          <Marker id="18264" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298247" tv-usec="786854" name="rename marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="CD1" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="Player Damage 03" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="932350" y-origin="1884">
+        <Selection>
+          <Marker id="18281" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="932350" y-origin="1884">
+        <Selection>
+          <Marker id="18281" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298254" tv-usec="922822" name="new CD marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="Player Damage 03" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="Player Damage 03" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18290" name="CD1" start="1305190" end="1352614" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1184342" y-origin="1884">
+        <Selection>
+          <Marker id="18281" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1184342" y-origin="1884">
+        <Selection>
+          <Marker id="18281" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1551298261" tv-usec="921999" name="rename marker">
+    <MementoCommand obj-id="34" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="Player Damage 03" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18290" name="CD1" start="1305190" end="1352614" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+      <Locations>
+        <Location id="269" name="session" start="0" end="1409520" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+        <Location id="280" name="Loop" start="24000" end="72000" flags="IsAutoLoop" locked="0" position-lock-style="AudioTime"/>
+        <Location id="436" name="Blaser Shot" start="0" end="12000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="3057" name="Blaster Projectile Loop" start="24000" end="120000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="8203" name="Blaster Projectile Hit" start="132000" end="156000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="9609" name="Weapon Empty" start="166240" end="172448" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10455" name="Flicker On" start="187096" end="188528" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="10472" name="Flicker Off" start="199320" end="202392" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16370" name="Healthpack Small" start="384000" end="432000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16384" name="Healthpack Medium" start="480000" end="552000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="16393" name="Healthpack Large" start="576000" end="672000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18255" name="Player Damage 01" start="753924" end="785020" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18264" name="Player Damage 02" start="897120" end="936000" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18281" name="Player Damage 03" start="1039470" end="1075454" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+        <Location id="18290" name="Player Death" start="1305190" end="1352614" flags="IsCDMarker,IsRangeMarker" locked="0" position-lock-style="AudioTime"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="42" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1184342" y-origin="1884">
+        <Selection>
+          <Marker id="18290" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="208" left-frame="1184342" y-origin="1884">
+        <Selection>
+          <Marker id="18290" start="1"/>
         </Selection>
       </SelectionMemento>
     </MementoCommand>

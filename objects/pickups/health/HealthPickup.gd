@@ -9,6 +9,8 @@ enum HEALTH_SIZE {
 	MEDIUM = 25,
 	LARGE = 100 }
 	
+var sound = null #
+	
 export(HEALTH_SIZE) var HealthSize
 
 func _ready():
@@ -20,10 +22,13 @@ func _ready():
 	
 	if HealthSize == SMALL:
 		$MeshInstance.mesh = $"Cube.002".mesh
+		sound = $Sounds/Small
 	elif HealthSize == MEDIUM:
 		$MeshInstance.mesh = $"Cube.001".mesh
+		sound = $Sounds/Medium
 	else:
 		$MeshInstance.mesh = $"Cube".mesh
+		sound = $Sounds/Large
 	
 	# force the material
 	$MeshInstance.material_override = preload("res://objects/pickups/health/health_pickup_materiall.tres")
@@ -40,3 +45,4 @@ func _on_Collision_body_entered(body):
 		if body.has_method("pickup"):
 			if body.pickup(contents):
 				deactivate()
+				sound.play()

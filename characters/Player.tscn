@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/Player.gd" type="Script" id=2]
 [ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/weapons/blaster/Blaster.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/Sound Effects/export/Weapon Empty.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/Sound Effects/export/Player Death.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/Sound Effects/export/Player Damage 01.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/Sound Effects/export/Player Damage 02.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/Sound Effects/export/Player Damage 03.wav" type="AudioStream" id=9]
 
 [sub_resource type="Environment" id=1]
 
@@ -85,7 +89,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Adjustments", "Glow", "Glow/levels" ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "damage"
 length = 0.5
@@ -140,9 +144,8 @@ tracks/3/keys = {
 "values": [ 0.2, 0.0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "death"
 length = 15.0
 loop = false
 step = 0.1
@@ -213,7 +216,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera" type="Camera" parent="Head" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = SubResource( 1 )
@@ -230,14 +232,100 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="WeaponHandle" type="Spatial" parent="Head/Camera" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362205, -0.334243, -0.458613 )
-_sections_unfolded = [ "Visibility" ]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240255, -0.339737, -0.279173 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Blaster" parent="Head/Camera/WeaponHandle" index="0" instance=ExtResource( 4 )]
 
-[node name="Empty" type="AudioStreamPlayer3D" parent="Head" index="1"]
+[node name="Sounds" type="Spatial" parent="Head" index="1"]
+
+[node name="Empty" type="AudioStreamPlayer3D" parent="Head/Sounds" index="0"]
 
 stream = ExtResource( 5 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 10000.0
+attenuation_filter_db = -12.0
+doppler_tracking = 0
+_sections_unfolded = [ "Doppler" ]
+
+[node name="Death" type="AudioStreamPlayer3D" parent="Head/Sounds" index="1"]
+
+stream = ExtResource( 6 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 10000.0
+attenuation_filter_db = -12.0
+doppler_tracking = 0
+_sections_unfolded = [ "Doppler" ]
+
+[node name="Damage 1" type="AudioStreamPlayer3D" parent="Head/Sounds" index="2"]
+
+stream = ExtResource( 7 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 10000.0
+attenuation_filter_db = -12.0
+doppler_tracking = 0
+_sections_unfolded = [ "Doppler" ]
+
+[node name="Damage 2" type="AudioStreamPlayer3D" parent="Head/Sounds" index="3"]
+
+stream = ExtResource( 8 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 10000.0
+attenuation_filter_db = -12.0
+doppler_tracking = 0
+_sections_unfolded = [ "Doppler" ]
+
+[node name="Damage 3" type="AudioStreamPlayer3D" parent="Head/Sounds" index="4"]
+
+stream = ExtResource( 9 )
 attenuation_model = 0
 unit_db = 0.0
 unit_size = 1.0
@@ -267,8 +355,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/damage = SubResource( 3 )
-anims/death = SubResource( 2 )
+anims/damage = SubResource( 2 )
+anims/death = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
