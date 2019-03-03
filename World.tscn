@@ -30,6 +30,7 @@ collision_layer = 0
 [node name="Enemy" parent="Characters/Enemies" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 0.316439, 0, 0.948613, 0, 1, 0, -0.948613, 0, 0.316439, -2.56453, 2.74509, -4.8357 )
+debug = true
 
 [node name="Enemy2" parent="Characters/Enemies" index="1" instance=ExtResource( 2 )]
 

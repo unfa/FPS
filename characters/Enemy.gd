@@ -4,7 +4,7 @@ extends "res://characters/Character.gd"
 # var a = 2
 # var b = "textvar"
 
-var debug = false
+export var debug = false
 
 # AI stuff
 
@@ -47,13 +47,19 @@ const WALK_DECELERATION = 0.4
 const WALK_GRAVITY = 9.8 * 4
 const WALK_JUMP = 5 * 2.5
 
-func walk(delta):
+func dclear():
+	$Debug/Label.text = ""
+
+func dlog(text):
+	$Debug/Label.text = $Debug/Label.text + '\n' + text
+
+func debug():
+	dclear()
 	
-	# get where is the player looking currently
-	var aim = $Head/Blaster.get_transform().basis
-	# reset the target walking direction so we have a clean slate
-	direction = Vector3()
+	dlog("DEBUG OBJECT: " + self.name)
+	dlog("HP: " + String(health))	
 	
+func trackPlayer():
 	if players.empty(): # if there are no players listed, let's check for them
 		players = self.get_tree().get_nodes_in_group("Players")
 	else: # since we have a list of players, let's check if any of them are in sight
@@ -63,19 +69,39 @@ func walk(delta):
 			#print("Enemy watching: ", player, " angle: ", sight)
 			#print(player)
 			
-			var head = $Head.global_transform.origin
-			var target = player.global_transform.origin
+#			var head = $Head.global_transform.origin
+#			var target = player.global_transform.origin
+#
+#			var to_player = target - head # vector poiting to player
+#
+#			var forward = $Head.global_transform.basis.get_euler()
+#
+#			# TODO - watch this: https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
+#
+#			var angle_to_player = to_player.normalized() - forward.normalized()
+#
+#			dlog(String(angle_to_player.normalized()))
 			
-			var to_player = target - head # vector poiting to player
+			var Ao = self.global_transform.origin # our location
+			var Bo = player.global_transform.origin # target location
+			var Ab = self.global_transform.basis.z
+			var C = (Bo - Ao).normalized()
+			var D = C.dot(Ao + Ab)
 			
-			var forward = $Head.global_transform.basis.get_euler()
+
 			
-			# TODO - watch this: https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
-			
-			var angle_to_player = to_player.normalized() - forward.normalized()
-		
-			#print(angle_to_player.normalized())
-			
+			dlog("Ao: " + String(Ao))
+			dlog("Bo: " + String(Bo))
+			dlog("Ab: " + String(Ab))
+			dlog("C: " + String(C))
+			dlog("D: " + String(D))
+
+func walk(delta):
+	
+	# get where is the character looking currently
+	var aim = $Head/Blaster.get_transform().basis
+	# reset the target walking direction so we have a clean slate
+	direction = Vector3()			
 			
 	
 	if state_alive:
@@ -102,7 +128,8 @@ func walk(delta):
 		if $Sensors/Front.is_colliding():
 			# if what we see is the player, and he's not dead
 			if $Sensors/Front.get_collider().name == "Player" and $Sensors/Front.get_collider().state_alive:
-				emit_signal("weapon_trigger") # shoot 'em
+				#emit_signal("weapon_trigger") # shoot 'em
+				pass
 		
 		# check if we should sprint or walk (sprint is default)
 		if Input.is_action_pressed("move_sprint"):
@@ -155,11 +182,15 @@ func enemy_hurt():
 		yield(get_tree().create_timer(pain_delay), "timeout")
 		state_pain = false
 	
-	if debug:
-		yield(get_tree(), "idle_frame") # wait for the data to be updated
-		print("Charecter hurt:", self.name, " HP: ", self.health)
+#	if debug:
+#		yield(get_tree(), "idle_frame") # wait for the data to be updated
+#		print("Charecter hurt:", self.name, " HP: ", self.health)
 
 func _ready():
+	if not debug:
+		$Debug.hide()
+		$Debug2.hide()
+	
 	# start inventory for the enemy
 	inventory = { "weapon_blaster": 1, "ammo_blaster": 10000 }
 	
@@ -171,13 +202,18 @@ func _ready():
 	
 	$Head/Blaster.user = self
 	
-	if debug:
-		print("Enemy init passed")
-		
-		var players = self.get_tree().get_nodes_in_group("Players")
+#	if debug:
+#		print("Enemy init passed")
+#
+#		var players = self.get_tree().get_nodes_in_group("Players")
 
 func _process(delta):
-	pass
+	if debug:
+		debug()
+
+	trackPlayer()
 
 func _physics_process(delta):
 	walk(delta)
+	
+	self.rotate_y(1 * delta)
