@@ -17,9 +17,15 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	
+	# TODO - move the following logc to the player code - this is not a clean solution!
+	
 	# connect event to user so he can reac to firing an empty gun
+	while user == null:
+		yield(get_tree(), "idle_frame")
+	
 	connect("weapon_empty", user, "weapon_empty")
-	pass
+		
+	#pass
 	
 func trigger():
 	if not ready: # if the gun is not ready - ignore the request
