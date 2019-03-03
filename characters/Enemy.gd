@@ -20,6 +20,10 @@ var state_alert = false
 var state_attack = false
 var state_panic = false
 
+# aiming and targeting
+
+var sightLimit = 0.7 # dot product higher than this means we see the player, lower means we don't
+
 var direction = Vector3()
 var interpolation = 1
 var velocity = Vector3()
@@ -84,17 +88,18 @@ func trackPlayer():
 			
 			var Ao = self.global_transform.origin # our location
 			var Bo = player.global_transform.origin # target location
-			var Ab = self.global_transform.basis.z
-			var C = (Bo - Ao).normalized()
-			var D = C.dot(Ao + Ab)
+			var Ab = self.global_transform.basis.z # our forward unit vector
+			var C = (Bo - Ao).normalized() # 
+			var D = C.dot(Ab)
 			
-
+			var sight = D > sightLimit
 			
 			dlog("Ao: " + String(Ao))
 			dlog("Bo: " + String(Bo))
 			dlog("Ab: " + String(Ab))
 			dlog("C: " + String(C))
 			dlog("D: " + String(D))
+			dlog("Player in sight?: " + String(sight))
 
 func walk(delta):
 	
