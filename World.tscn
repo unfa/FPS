@@ -4,7 +4,7 @@
 [ext_resource path="res://characters/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/test01/Test01.tscn" type="PackedScene" id=3]
 
-[node name="World" type="Spatial"]
+[node name="World" type="Spatial" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -29,12 +29,28 @@ collision_layer = 0
 
 [node name="Enemy" parent="Characters/Enemies" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 0.316439, 0, 0.948613, 0, 1, 0, -0.948613, 0, 0.316439, -2.56453, 2.74509, -4.8357 )
+transform = Transform( 0.99745, 0, 0.0713766, 0, 1, 0, -0.0713766, 0, 0.99745, -2.41557, 2.74509, -10.6816 )
 debug = true
 
 [node name="Enemy2" parent="Characters/Enemies" index="1" instance=ExtResource( 2 )]
 
-transform = Transform( -0.129724, 0, -0.99155, 0, 1, 0, 0.99155, 0, -0.129724, 2.39265, 2.74509, -11.8344 )
+transform = Transform( -0.791889, 0, -0.610666, 0, 1, 0, 0.610666, 0, -0.791889, 12.7449, 2.74509, -20.8252 )
+
+[node name="Enemy3" parent="Characters/Enemies" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( -0.718653, 0, 0.695368, 0, 1, 0, -0.695368, 0, -0.718653, -7.1333, 2.74509, -20.8252 )
+
+[node name="Enemy4" parent="Characters/Enemies" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( -0.00208271, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.00208271, -7.1333, 2.74509, -31.938 )
+
+[node name="Enemy5" parent="Characters/Enemies" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.998921, 0, 0.0464437, 0, 1, 0, -0.0464437, 0, 0.998921, 20.9457, 2.74509, -44.893 )
+
+[node name="Enemy6" parent="Characters/Enemies" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 0.998921, 0, 0.0464437, 0, 1, 0, -0.0464437, 0, 0.998921, -18.8052, 2.74509, -44.893 )
 
 [node name="Map" parent="." index="1" instance=ExtResource( 3 )]
 

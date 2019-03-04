@@ -157,6 +157,7 @@ environment = SubResource( 1 )
 
 [node name="Geometry" parent="." index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="level 13" parent="Geometry" index="0"]
@@ -170,6 +171,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Lighting" type="Spatial" parent="." index="2"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="OmniLight" type="OmniLight" parent="Lighting" index="0"]

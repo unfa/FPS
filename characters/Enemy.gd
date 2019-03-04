@@ -68,27 +68,12 @@ func trackPlayer():
 		players = self.get_tree().get_nodes_in_group("Players")
 	else: # since we have a list of players, let's check if any of them are in sight
 		for player in players:
-			#var sight = Vector3(0,0,1)
-			#sight.angle_to(player.location.origin)
-			#print("Enemy watching: ", player, " angle: ", sight)
-			#print(player)
 			
-#			var head = $Head.global_transform.origin
-#			var target = player.global_transform.origin
-#
-#			var to_player = target - head # vector poiting to player
-#
-#			var forward = $Head.global_transform.basis.get_euler()
-#
-#			# TODO - watch this: https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
-#
-#			var angle_to_player = to_player.normalized() - forward.normalized()
-#
-#			dlog(String(angle_to_player.normalized()))
+			var phead = player.get_node("Head") # get player's head so we can look him in the eyes
 			
-			var Ao = self.global_transform.origin # our location
-			var Bo = player.global_transform.origin # target location
-			var Ab = self.global_transform.basis.z # our forward unit vector
+			var Ao = $Head.global_transform.origin # our head's location
+			var Bo = phead.global_transform.origin # player head's location
+			var Ab = $Head.global_transform.basis.z # our forward unit vector
 			var C = (Bo - Ao).normalized() # 
 			var D = C.dot(Ab)
 			
@@ -100,6 +85,19 @@ func trackPlayer():
 			dlog("C: " + String(C))
 			dlog("D: " + String(D))
 			dlog("Player in sight?: " + String(sight))
+#
+			if sight: # if the player is in the seeing range
+				# intersect a ray to him to check if nothing blocks the view
+				var result = get_world().direct_space_state.intersect_ray(Ao, Bo, [self])
+				var blocked = true
+				var distance = 0
+				# if we hit nothing - the player is clearly visible, so we show it
+				if result.values().has(player):
+					blocked = false
+					distance = Ao.distance_to(Bo) # calculate distance to camera
+				
+				dlog("Player sight blocked?: " + String(blocked))
+				dlog("Player distance?: " + String(distance))
 
 func walk(delta):
 	
@@ -133,8 +131,8 @@ func walk(delta):
 		if $Sensors/Front.is_colliding():
 			# if what we see is the player, and he's not dead
 			if $Sensors/Front.get_collider().name == "Player" and $Sensors/Front.get_collider().state_alive:
-				#emit_signal("weapon_trigger") # shoot 'em
-				pass
+				emit_signal("weapon_trigger") # shoot 'em
+				#pass
 		
 		# check if we should sprint or walk (sprint is default)
 		if Input.is_action_pressed("move_sprint"):
@@ -221,4 +219,4 @@ func _process(delta):
 func _physics_process(delta):
 	walk(delta)
 	
-	self.rotate_y(1 * delta)
+	#self.rotate_y(1 * delta)
